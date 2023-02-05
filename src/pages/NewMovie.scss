@@ -1,0 +1,38 @@
+#newMovie {
+    margin-top: 30px;
+    position: relative;
+    #youtubeText{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .movieText{
+            width: 40%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h2 {
+                font-size: 70px;
+                height: 40%;
+                padding-top: 50px;
+            }
+            p {
+                height: 60%;
+                font-size: 20px;
+                padding-top: 100px;
+            }
+        }
+        .youtube{
+           width: 30%;
+        }
+        
+    }
+    #bgm{
+        
+    }
+    
+}
