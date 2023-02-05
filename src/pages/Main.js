@@ -3,21 +3,15 @@ import './Main.scss';
 import Latest from './Latest';
 import Recomend from './Recomend';
 import NewMovie from './NewMovie';
-import MoviePostContainer from '../container/MoviePostContainer';
-
-
-    
-   /*  const hidden = () => {
-        style: {display: {sct} == 600 ? "none": "block"}
-    } */
+import SubBoard from './SubBoard';
 
 const Main = () => {
     return (
         <div className='main' >
             <NewMovie/>
             <Latest/>
-            <MoviePostContainer/>
-            <Recomend/>    
+            <Recomend/>
+            <SubBoard/>    
         </div>
     );
 };

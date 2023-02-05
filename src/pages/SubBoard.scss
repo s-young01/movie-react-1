@@ -1,0 +1,28 @@
+.sboard{
+    width: 100%;
+    padding: 240px 0;
+    display: flex;
+    justify-content: space-between;
+    .box{
+        width: 32%;
+        padding: 30px 40px;
+        background-color: #fff;
+        height: 240px;
+        margin-right: 10px;
+        border-radius: 10px;
+        h3 {
+            font-size: 22px;
+        }
+        ul{
+            text-align: left;
+            padding-left: 40px;
+            padding-top: 30px;
+            font-size: 15px;
+            li {
+                padding: 10px 0;
+                list-style: square;
+            }
+        }
+    }
+}
+    

@@ -2,11 +2,11 @@
     margin-top: 30px;
     position: relative;
     #youtubeText{
-        width: 80%;
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         position: absolute;
-        top: 30%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         .movieText{
@@ -16,23 +16,20 @@
             flex-direction: column;
             justify-content: space-between;
             h2 {
-                font-size: 70px;
+                font-size: 68px;
                 height: 40%;
                 padding-top: 50px;
             }
             p {
+                width: 100%;
                 height: 60%;
-                font-size: 20px;
+                font-size: 18px;
                 padding-top: 100px;
             }
         }
         .youtube{
-           width: 30%;
+           width: 40%;
         }
         
     }
-    #bgm{
-        
-    }
-    
 }
