@@ -1,5 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import './Join.scss';
+
+const Select = styled.select`
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('/images/select_arrow.png') calc(100% - 1px) center no-repeat;
+    background-size: 20px;
+    padding: 4px 30px 4px 10px;
+    border-radius: 4px;
+    outline: 0 none;
+`;
+const Option = styled.option`
+    background: #eee;
+    color: #082032;
+    padding: 3px 0;
+`;
 
 const JoinPage = () => {
     return (
@@ -37,42 +55,48 @@ const JoinPage = () => {
                             <tr>
                                 <td><span>이메일</span></td>
                                 <td>
-                                    <input name='m_email' type='text'/>@ 
-                                    <select>
-                                        <option>google.com</option>
-                                        <option>naver.com</option>
-                                        <option>daum.net</option>
-                                        <option>nate.com</option>
-                                        <option>hanmail.com</option>
-                                    </select>
+                                    <input name='m_email' type='text'/>
+                                    <span className='sp'>@</span>
+                                    <Select>
+                                        <Option>google.com</Option>
+                                        <Option>naver.com</Option>
+                                        <Option>daum.net</Option>
+                                        <Option>nate.com</Option>
+                                        <Option>hanmail.com</Option>
+                                    </Select>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>생년월일</span></td>
                                 <td>
-                                    <input name='m_y' type='text'/>년
-                                    <select>
-                                        <option>1</option>                                        
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                    </select>월
-                                    <input name='m_d' type='text'/>일
+                                    <input name='m_y' type='text'/>
+                                    <span className='sp'>년</span>
+                                    <Select>
+                                        <Option>1</Option>                                        
+                                        <Option>2</Option>
+                                        <Option>3</Option>
+                                        <Option>4</Option>
+                                        <Option>5</Option>
+                                        <Option>6</Option>
+                                        <Option>7</Option>
+                                        <Option>8</Option>
+                                        <Option>9</Option>
+                                        <Option>10</Option>
+                                        <Option>11</Option>
+                                        <Option>12</Option>
+                                    </Select>
+                                    <span className='sp'>월</span>
+                                    <input name='m_d' type='text'/>
+                                    <span className='sp'>일</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>성별</span></td>
                                 <td>
-                                    남 <input name='m_gender' type='radio' value='남' />
-                                    여 <input name='m_gender' type='radio' value='여'/>
+                                    <span className='sp2'>남</span> 
+                                    <input name='m_gender' type='radio' value='남' />
+                                    <span className='sp2'>여</span>
+                                    <input name='m_gender' type='radio' value='여'/>
                                 </td>
                                     
                             </tr>
