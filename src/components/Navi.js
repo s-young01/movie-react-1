@@ -21,16 +21,16 @@ const Navi = () => {
                         <span><Link to='/latest'>최신영화</Link></span>
                         <div className='innermenu'>
                             <ul>
-                                <li>현재 상영작</li>
-                                <li>개봉 예정작</li>
+                                <li><Link to='/latest'>현재 상영작</Link></li>
+                                <li><Link to='/yet'>개봉 예정작</Link></li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <span>추천영화</span>
+                        <span><Link to='/recomend'>추천영화</Link></span>
                         <div className='innermenu'>
                             <ul>
-                                <li>이달의 추천 영화</li>
+                                <li><Link to='/month'>이달의 추천 영화</Link></li>
                                 <li>장르별 추천 영화</li>
                             </ul>
                         </div>

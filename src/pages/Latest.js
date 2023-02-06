@@ -21,22 +21,22 @@ export default class PauseOnHover extends Component {
         <h2>최신영화</h2>
         <Slider {...settings} className='slider'>
           <div className="slide">
-            <img src="images/The First Slam Dunk.jpg" alt=""/>
+            <img src="images/poster1_1.jpg" alt=""/>
           </div>
           <div className="slide">
-            <img src="images/The Point Men.jpg" alt=""/>
+            <img src="images/poster1_2.jpg" alt=""/>
           </div>
           <div className="slide">
-            <img src="images/The First Slam Dunk.jpg" alt=""/>
+            <img src="images/poster1_3.jpg" alt=""/>
           </div>
           <div className="slide">
-            <img src="images/The Point Men.jpg" alt=""/>
+            <img src="images/poster1_4.jpg" alt=""/>
           </div>
           <div className="slide">
-            <img src="images/The First Slam Dunk.jpg" alt=""/>
+            <img src="images/poster1_5.jpg" alt=""/>
           </div>
           <div className="slide">
-            <img src="images/The Point Men.jpg" alt=""/>
+            <img src="images/poster1_6.jpg" alt=""/>
           </div>
         </Slider>
       </div>
