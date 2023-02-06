@@ -20,14 +20,11 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/join' element={<JoinPage/>}/>
         <Route path='/latest' element={<NewMoviePage/>}/>
-<<<<<<< Updated upstream
         <Route path='/yet' element={<YetMoviePage/>}/>
         <Route path='/recomend' element={<RecomendPage/>}/>
         <Route path='/month' element={<MonthRecoPage/>}/>
-=======
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/latest/:no' element={<MovieDetail/>}/>
->>>>>>> Stashed changes
       </Routes>
     </div>
   );

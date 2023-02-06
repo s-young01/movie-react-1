@@ -111,7 +111,6 @@ const onSubmit = (e) => {
                                 <td><span>이메일</span></td>
                                 <td>
                                     <input name='email1' type='text' onChange={onChange}/>
-                                    <span className='sp'>@</span>
                                     <Select name="email2" onChange={onChange}>
                                         <Option>선택해주세요.</Option>
                                         <Option value="google.com" >@ google.com</Option>
@@ -151,7 +150,7 @@ const onSubmit = (e) => {
                                 <td><span>성별</span></td>
                                 <td>
                                     <span className='sp2'>남</span> 
-                                    <input name='gender' type='radio' value="남" onChange={onChange} checked/>
+                                    <input name='gender' type='radio' value="남" onChange={onChange}/>
                                     <span className='sp2'>여</span>
                                     <input name='gender' type='radio' value="여" onChange={onChange}/>
                                 </td>   
