@@ -17,6 +17,7 @@ const Navi = () => {
             </button>
             <div className={isOpen ? 'show_menu move' : 'hide_menu move'}>
                 <ul className='navmenu'>
+                    <li><span><Link to='/'>HOME</Link></span></li>
                     <li>
                         <span><Link to='/latest'>최신영화</Link></span>
                         <div className='innermenu'>
