@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
+import Community from './pages/Community';
 import Main from './pages/Main';
 import JoinPage from './pages/member/JoinPage';
 import LoginPage from './pages/member/LoginPage';
@@ -25,6 +26,9 @@ function App() {
         <Route path='/month' element={<MonthRecoPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/latest/:no' element={<MovieDetail/>}/>
+
+        <Route path='/free' element={<Community/>}/>
+
       </Routes>
     </div>
   );
