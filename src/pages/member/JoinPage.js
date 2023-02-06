@@ -4,12 +4,7 @@ import styled from 'styled-components';
 import { API_URL } from '../../config/apiurl';
 import './Join.scss';
 
-<<<<<<< Updated upstream
-
-
-=======
 // select / option 스타일
->>>>>>> Stashed changes
 const Select = styled.select`
     -o-appearance: none;
     -webkit-appearance: none;
@@ -89,74 +84,48 @@ const onSubmit = (e) => {
                             <tr>
                                 <td><span>아이디</span></td>
                                 <td>
-<<<<<<< Updated upstream
                                     <input name='id' type='text' value={formData.id} onChange={onChange}/>
-=======
-                                    <input name='id' type='text'/>
->>>>>>> Stashed changes
                                     <button className='id_btn'>중복확인</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>비밀번호</span></td>
                                 <td>
-<<<<<<< Updated upstream
                                     <input name='password' type='password' value={formData.password} onChange={onChange}/>
-=======
-                                    <input name='pass' type='password'/>
->>>>>>> Stashed changes
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>비밀번호 확인</span></td>
                                 <td>
-<<<<<<< Updated upstream
                                     <input name='passwordch' type='password' value={formData.passwordch} onChange={onChange}/>
-=======
-                                    <input name='passch' type='password'/>
->>>>>>> Stashed changes
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>닉네임</span></td>
                                 <td>
-<<<<<<< Updated upstream
                                     <input name='nicname' type='text' value={formData.nicname} onChange={onChange}/>
-=======
-                                    <input name='nickname' type='text'/>
                                     <button className='id_btn'>중복확인</button>
->>>>>>> Stashed changes
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>이메일</span></td>
                                 <td>
-<<<<<<< Updated upstream
                                     <input name='email1' type='text' onChange={onChange}/>
                                     <span className='sp'>@</span>
                                     <Select name="email2" onChange={onChange}>
-                                        <Option value="google.com" >google.com</Option>
-                                        <Option value="naver.com">naver.com</Option>
-                                        <Option value="daum.net">daum.net</Option>
-                                        <Option value="nate.com">nate.com</Option>
-                                        <Option value="hanmail.com">hanmail.com</Option>
-=======
-                                    <input name='email' type='text'/>
-                                    <Select>
                                         <Option>선택해주세요.</Option>
-                                        <Option>@ google.com</Option>
-                                        <Option>@ naver.com</Option>
-                                        <Option>@ daum.net</Option>
-                                        <Option>@ nate.com</Option>
-                                        <Option>@ hanmail.com</Option>
->>>>>>> Stashed changes
+                                        <Option value="google.com" >@ google.com</Option>
+                                        <Option value="naver.com">@ naver.com</Option>
+                                        <Option value="daum.net">@ daum.net</Option>
+                                        <Option value="nate.com">@ nate.com</Option>
+                                        <Option value="hanmail.com">@ hanmail.com</Option>
+                                    <input name='email' type='text'/>
                                     </Select>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>생년월일</span></td>
                                 <td>
-<<<<<<< Updated upstream
                                     <input name='year' type='text' value={formData.year} onChange={onChange}/>
                                     <span className='sp'>년</span>
                                     <Select name="month" onChange={onChange}>
@@ -174,27 +143,7 @@ const onSubmit = (e) => {
                                         <Option value="12" >12</Option>
                                     </Select>
                                     <span className='sp'>월</span>
-                                    <input name='day' type='text' value={formData.day} onChange={onChange}/>
-=======
-                                    <input name='year' type='text'/>
-                                    <span className='sp'>년</span>
-                                    <Select name='month'>
-                                        <Option>1</Option>                                        
-                                        <Option>2</Option>
-                                        <Option>3</Option>
-                                        <Option>4</Option>
-                                        <Option>5</Option>
-                                        <Option>6</Option>
-                                        <Option>7</Option>
-                                        <Option>8</Option>
-                                        <Option>9</Option>
-                                        <Option>10</Option>
-                                        <Option>11</Option>
-                                        <Option>12</Option>
-                                    </Select>
-                                    <span className='sp'>월</span>
-                                    <input name='day' type='text' className='dayinput'/>
->>>>>>> Stashed changes
+                                    <input name='day' type='text' value={formData.day} onChange={onChange} className='dayinput'/>
                                     <span className='sp'>일</span>
                                 </td>
                             </tr>
@@ -202,18 +151,10 @@ const onSubmit = (e) => {
                                 <td><span>성별</span></td>
                                 <td>
                                     <span className='sp2'>남</span> 
-<<<<<<< Updated upstream
-                                    <input name='gender' type='radio' value="남" onChange={onChange}/>
+                                    <input name='gender' type='radio' value="남" onChange={onChange} checked/>
                                     <span className='sp2'>여</span>
                                     <input name='gender' type='radio' value="여" onChange={onChange}/>
                                 </td>   
-=======
-                                    <input name='gender' type='radio' value='남' checked/>
-                                    <span className='sp2'>여</span>
-                                    <input name='gender' type='radio' value='여'/>
-                                </td>
-                                    
->>>>>>> Stashed changes
                             </tr>
                         </tbody>
                     </table>
