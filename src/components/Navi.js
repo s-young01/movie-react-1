@@ -43,7 +43,7 @@ const Navi = () => {
                         <div className='innermenu'>
                             <ul>
                                 <li>공지사항</li>
-                                <li>자유 게시판</li>
+                                <li><Link to='/free'>자유 게시판</Link></li>
                             </ul>
                         </div>
                     </li>
