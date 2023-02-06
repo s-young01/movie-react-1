@@ -3,7 +3,7 @@ import './Community.scss';
 
 const Community = () => {
     return (
-    <table className='table table-striped'>
+    <table className='table-striped'>
         <thead>
             <h3>자유게시판</h3>
             <tr>

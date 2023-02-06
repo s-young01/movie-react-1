@@ -118,7 +118,6 @@ const onSubmit = (e) => {
                                         <Option value="daum.net">@ daum.net</Option>
                                         <Option value="nate.com">@ nate.com</Option>
                                         <Option value="hanmail.com">@ hanmail.com</Option>
-                                    <input name='email' type='text'/>
                                     </Select>
                                 </td>
                             </tr>
