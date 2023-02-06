@@ -3,7 +3,12 @@ import Header from './components/Header';
 import Community from './pages/Community';
 import Main from './pages/Main';
 import JoinPage from './pages/member/JoinPage';
+import LoginPage from './pages/member/LoginPage';
+import MovieDetail from './pages/MovieDetail';
 import NewMoviePage from './pages/NewMoviePage';
+import RecomendPage from './pages/RecomendPage';
+import MonthRecoPage from './pages/subpages/MonthRecoPage';
+import YetMoviePage from './pages/subpages/YetMoviePage';
 
 
 
@@ -21,7 +26,9 @@ function App() {
         <Route path='/month' element={<MonthRecoPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/latest/:no' element={<MovieDetail/>}/>
+
         <Route path='/free' element={<Community/>}/>
+
       </Routes>
     </div>
   );

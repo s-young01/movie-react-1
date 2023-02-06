@@ -1,26 +1,35 @@
 #join {
     width: 100%;
     height: 100vh;
-    padding: 260px 220px 120px;
+    padding: 240px 280px 120px;
     color: #082032;
     .joinbox {
-        height: 470px;
+        height: 600px;
         background-color: #fff;
         border-radius: 10px;
         h2 {
-            padding: 30px 0;
+            padding: 40px 0;
+            font-size: 26px;
             text-align: center;
         }
         .member_table {
             width: 100%;
-            height: 300px;
-            padding: 0 50px;
-            span {
-                font-weight: bold;
-            }
-            .sp {
-                padding: 0 5px;
-                font-weight: normal;
+            height: 360px;
+            padding: 0 100px;
+            tr {
+                td {
+                    span {
+                        font-size: 16px; 
+                        font-weight: bold;
+                    }
+                    .sp {
+                        padding: 0 5px;
+                        font-weight: normal;
+                    }
+                    &:first-child {
+                        width: 20%;
+                    }
+                }
             }
             .id_btn {
                 font-family: 'GoyangIlsan', sans-serif;
@@ -40,7 +49,13 @@
             input {
                 padding: 3px;
             }
+            .dayinput {
+                width: 8%;
+            }
             /* IE */
+            select {
+                margin-left: 10px;
+            }
             select::-ms-expand { 
                 display: none;
             }
@@ -68,8 +83,8 @@
             }
         }
         .join_btn {
-            width: 100%;
-            padding: 20px 0;
+            font-size: 16px; 
+            padding: 30px 0;
             display: flex;
             align-items: center;
             margin-left: 70%;
