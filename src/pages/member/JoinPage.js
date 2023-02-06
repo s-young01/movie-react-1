@@ -1,6 +1,10 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { API_URL } from '../../config/apiurl';
 import './Join.scss';
+
+
 
 const Select = styled.select`
     -o-appearance: none;
@@ -20,73 +24,117 @@ const Option = styled.option`
 `;
 
 const JoinPage = () => {
+    const [formData, setFormData] = useState({
+        id: "",
+        nicname: "",
+        password: "",
+        passwordch: "",
+        year: "",
+        month: "",
+        day: "",
+        email1: "",
+        email2: "",
+        gender: ""
+    })
+
+const onChange = (e) => {
+    const {name, value} = e.target
+    console.log(value)
+    setFormData({
+        ...formData,
+        [name] : value
+    })
+}
+//폼 전송 이벤트
+const onSubmit = (e) => {
+        e.preventDefault();
+        //입력 다 되었는지 확인
+        if(formData.id !== "" && formData.nicname !== "" && formData.password !== "" 
+        && formData.year !== "" && formData.month !== "" && formData.day !== "" 
+        && formData.email1 !== "" && formData.email2 !== "" && formData.gender !== "" ){
+            addMenger()
+        }
+    }
+    const addMenger = () => {
+        console.log("호출")
+        axios.post(`${API_URL}/join`, formData)
+        .then(res=>{
+            console.log("등록완료")
+            alert('등록이되었습니다.')
+        })
+        .catch(e=>{
+            console.log('에러가 발생했습니다')
+            console.log(e)
+        })
+    }
     return (
         <div className='inner'>
             <div id='join'>
                 <div className='joinbox'>
                     <h2>회원가입</h2>
+                    <form onSubmit={onSubmit}>
                     <table className='member_table'>
                         <tbody>
                             <tr>
                                 <td><span>아이디</span></td>
                                 <td>
-                                    <input name='m_id' type='text'/>
+                                    <input name='id' type='text' value={formData.id} onChange={onChange}/>
                                     <button className='id_btn'>중복확인</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>비밀번호</span></td>
                                 <td>
-                                    <input name='m_pass' type='text'/>
+                                    <input name='password' type='password' value={formData.password} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>비밀번호 확인</span></td>
                                 <td>
-                                    <input name='m_passch' type='text'/>
+                                    <input name='passwordch' type='password' value={formData.passwordch} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>닉네임</span></td>
                                 <td>
-                                    <input name='m_nickname' type='text'/>
+                                    <input name='nicname' type='text' value={formData.nicname} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>이메일</span></td>
                                 <td>
-                                    <input name='m_email' type='text'/>
+                                    <input name='email1' type='text' onChange={onChange}/>
                                     <span className='sp'>@</span>
-                                    <Select>
-                                        <Option>google.com</Option>
-                                        <Option>naver.com</Option>
-                                        <Option>daum.net</Option>
-                                        <Option>nate.com</Option>
-                                        <Option>hanmail.com</Option>
+                                    <Select name="email2" onChange={onChange}>
+                                        <Option value="google.com" >google.com</Option>
+                                        <Option value="naver.com">naver.com</Option>
+                                        <Option value="daum.net">daum.net</Option>
+                                        <Option value="nate.com">nate.com</Option>
+                                        <Option value="hanmail.com">hanmail.com</Option>
                                     </Select>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span>생년월일</span></td>
                                 <td>
-                                    <input name='m_y' type='text'/>
+                                    <input name='year' type='text' value={formData.year} onChange={onChange}/>
                                     <span className='sp'>년</span>
-                                    <Select>
-                                        <Option>1</Option>                                        
-                                        <Option>2</Option>
-                                        <Option>3</Option>
-                                        <Option>4</Option>
-                                        <Option>5</Option>
-                                        <Option>6</Option>
-                                        <Option>7</Option>
-                                        <Option>8</Option>
-                                        <Option>9</Option>
-                                        <Option>10</Option>
-                                        <Option>11</Option>
-                                        <Option>12</Option>
+                                    <Select name="month" onChange={onChange}>
+                                        <Option value="1" >1</Option>                                        
+                                        <Option value="2" >2</Option>
+                                        <Option value="3" >3</Option>
+                                        <Option value="4" >4</Option>
+                                        <Option value="5" >5</Option>
+                                        <Option value="6" >6</Option>
+                                        <Option value="7" >7</Option>
+                                        <Option value="8" >8</Option>
+                                        <Option value="9" >9</Option>
+                                        <Option value="10" >10</Option>
+                                        <Option value="11" >11</Option>
+                                        <Option value="12" >12</Option>
                                     </Select>
                                     <span className='sp'>월</span>
-                                    <input name='m_d' type='text'/>
+                                    <input name='day' type='text' value={formData.day} onChange={onChange}/>
                                     <span className='sp'>일</span>
                                 </td>
                             </tr>
@@ -94,18 +142,18 @@ const JoinPage = () => {
                                 <td><span>성별</span></td>
                                 <td>
                                     <span className='sp2'>남</span> 
-                                    <input name='m_gender' type='radio' value='남' />
+                                    <input name='gender' type='radio' value="남" onChange={onChange}/>
                                     <span className='sp2'>여</span>
-                                    <input name='m_gender' type='radio' value='여'/>
-                                </td>
-                                    
+                                    <input name='gender' type='radio' value="여" onChange={onChange}/>
+                                </td>   
                             </tr>
                         </tbody>
                     </table>
                     <div className='join_btn'>
-                        <button>가입하기</button>
+                        <button type="submit">가입하기</button>
                         <button>취소</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
