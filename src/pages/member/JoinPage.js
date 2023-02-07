@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { API_URL } from '../../config/apiurl';
 import './Join.scss';
@@ -24,6 +25,7 @@ const Option = styled.option`
 `;
 
 const JoinPage = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         id: "",
         nicname: "",
@@ -61,6 +63,7 @@ const onSubmit = (e) => {
         .then(res=>{
             console.log("등록완료")
             alert('등록이되었습니다.')
+            navigate('/login')
         })
         .catch(e=>{
             console.log('에러가 발생했습니다')
@@ -127,15 +130,15 @@ const onSubmit = (e) => {
                                     <input name='year' type='text' value={formData.year} onChange={onChange}/>
                                     <span className='sp'>년</span>
                                     <Select name="month" onChange={onChange}>
-                                        <Option value="1" >1</Option>                                        
-                                        <Option value="2" >2</Option>
-                                        <Option value="3" >3</Option>
-                                        <Option value="4" >4</Option>
-                                        <Option value="5" >5</Option>
-                                        <Option value="6" >6</Option>
-                                        <Option value="7" >7</Option>
-                                        <Option value="8" >8</Option>
-                                        <Option value="9" >9</Option>
+                                        <Option value="01" >01</Option>                                        
+                                        <Option value="02" >02</Option>
+                                        <Option value="03" >03</Option>
+                                        <Option value="04" >04</Option>
+                                        <Option value="05" >05</Option>
+                                        <Option value="06" >06</Option>
+                                        <Option value="07" >07</Option>
+                                        <Option value="08" >08</Option>
+                                        <Option value="09" >09</Option>
                                         <Option value="10" >10</Option>
                                         <Option value="11" >11</Option>
                                         <Option value="12" >12</Option>
