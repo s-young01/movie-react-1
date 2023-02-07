@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { API_URL } from '../../config/apiurl';
+import { goToHome } from '../../moduls/loginCheck';
 import './Join.scss';
 
 // select / option 스타일
@@ -25,9 +27,11 @@ const Option = styled.option`
 `;
 
 const JoinPage = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         id: "",
+        username:"",
         nicname: "",
         password: "",
         passwordch: "",
@@ -41,7 +45,7 @@ const JoinPage = () => {
 
 const onChange = (e) => {
     const {name, value} = e.target
-    console.log(value)
+    //console.log(value)
     setFormData({
         ...formData,
         [name] : value
@@ -51,7 +55,7 @@ const onChange = (e) => {
 const onSubmit = (e) => {
         e.preventDefault();
         //입력 다 되었는지 확인
-        if(formData.id !== "" && formData.nicname !== "" && formData.password !== "" 
+        if(formData.id !== "" && formData.username !== "" && formData.nicname !== "" && formData.password !== "" 
         && formData.year !== "" && formData.month !== "" && formData.day !== "" 
         && formData.email1 !== "" && formData.email2 !== "" && formData.gender !== "" ){
             addMenger()
@@ -70,6 +74,9 @@ const onSubmit = (e) => {
             console.log(e)
         })
     }
+    const home = () => {
+        dispatch(goToHome(navigate))
+    }
     return (
         <div className='inner'>
             <div id='join'>
@@ -81,7 +88,7 @@ const onSubmit = (e) => {
                             <tr>
                                 <td><span>이름</span></td>
                                 <td>
-                                    <input name='name' type='text'/>
+                                    <input name='username' type='text' value={formData.username} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
@@ -130,6 +137,7 @@ const onSubmit = (e) => {
                                     <input name='year' type='text' value={formData.year} onChange={onChange}/>
                                     <span className='sp'>년</span>
                                     <Select name="month" onChange={onChange}>
+                                        <Option>선택해주세요</Option> 
                                         <Option value="01" >01</Option>                                        
                                         <Option value="02" >02</Option>
                                         <Option value="03" >03</Option>
@@ -161,7 +169,7 @@ const onSubmit = (e) => {
                     </table>
                     <div className='join_btn'>
                         <button type="submit">가입하기</button>
-                        <button>취소</button>
+                        <button onClick={home}>취소</button>
                     </div>
                     </form>
                 </div>

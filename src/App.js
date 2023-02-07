@@ -9,8 +9,8 @@ import MonthRecoPage from './pages/subpages/MonthRecoPage';
 import YetMoviePage from './pages/subpages/YetMoviePage';
 import MoviePostContainer from './container/MoviePostContainer';
 import MoviePostDetail from './container/MoviePostDetail';
-
 import './App.css';
+import FindId from './pages/member/FindId';
 
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/latest/:no' element={<MoviePostDetail/>}/>
         <Route path='/free' element={<Community/>}/>
+        <Route path='/findid' element={<FindId/>}/>
       </Routes>
     </div>
   );

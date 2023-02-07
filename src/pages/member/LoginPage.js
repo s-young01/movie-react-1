@@ -1,9 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config/apiurl';
+import { goToHome, setLogin } from '../../moduls/loginCheck';
+import { setCookie } from '../../util/cookie';
 import './Login.scss';
 
 const LoginPage = () => { 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [loginData, setLoginData] = useState({
         id: "",
         password: "",
@@ -23,7 +29,17 @@ const LoginPage = () => {
             axios.post(`${API_URL}/login`, loginData)
             .then(result=>{
                 console.log(result)
-                alert("로그인하였습니다.")
+                const {id, nicname} = result.data[0];
+                if(id && nicname) {
+                    alert("로그인하였습니다.")
+                    let expires = new Date();
+                    expires.setMinutes(expires.getMinutes()+60);
+                    setCookie('userid', `${id}`, {path: '/', expires});
+                    setCookie('usernickname', `${nicname}`, 
+                    {path: '/', expires});
+                    dispatch(setLogin());
+                    dispatch(goToHome(navigate))
+                }
             })
             .catch(e=>{
                 console.log(e)
@@ -58,13 +74,13 @@ const LoginPage = () => {
                         </tbody>
                     </table>
                     <ul className='find'>
-                        <li>아이디 찾기</li>
+                        <Link to="/findid"><li>아이디 찾기</li></Link>
                         <span>|</span>
                         <li>비밀번호 찾기</li>
                     </ul>
                     <div className='login_btn'>
                         <button type="submit">로그인</button>
-                        <button>회원가입</button>
+                        <Link to="/join"><button>회원가입</button></Link>
                     </div>
                     </form>
                 </div>
