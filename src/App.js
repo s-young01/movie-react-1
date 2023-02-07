@@ -10,7 +10,7 @@ import RecomendPage from './pages/RecomendPage';
 import MonthRecoPage from './pages/subpages/MonthRecoPage';
 import YetMoviePage from './pages/subpages/YetMoviePage';
 
-
+import './App.css';
 
 
 function App() {
