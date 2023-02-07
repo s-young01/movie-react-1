@@ -1,10 +1,12 @@
 import React from 'react';
+import { API_URL } from '../../config/apiurl';
 
-const MovieDetail = () => {
+const MovieDetail = ({data}) => {
     return (
         <div>
             <div>
                 <div>
+                    <h3>{data.mov_title}</h3>
                     <ul>
                         <li></li>
                         <li></li>
@@ -17,7 +19,7 @@ const MovieDetail = () => {
                     </ul>
                 </div>
                 <div>
-                    <img src='/images/poster1.js' alt=''/>
+                    <img src={`${API_URL}/${data.mov_img}`} alt=''/>
                 </div>
             </div>
             <div>

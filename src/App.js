@@ -4,11 +4,11 @@ import Community from './pages/Community';
 import Main from './pages/Main';
 import JoinPage from './pages/member/JoinPage';
 import LoginPage from './pages/member/LoginPage';
-import MovieDetail from './pages/MovieDetail';
-import NewMoviePage from './pages/NewMoviePage';
 import RecomendPage from './pages/RecomendPage';
 import MonthRecoPage from './pages/subpages/MonthRecoPage';
 import YetMoviePage from './pages/subpages/YetMoviePage';
+import MoviePostContainer from './container/MoviePostContainer';
+import MoviePostDetail from './container/MoviePostDetail';
 
 import './App.css';
 
@@ -20,15 +20,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/join' element={<JoinPage/>}/>
-        <Route path='/latest' element={<NewMoviePage/>}/>
+        <Route path='/latest' element={<MoviePostContainer/>}/>
         <Route path='/yet' element={<YetMoviePage/>}/>
         <Route path='/recomend' element={<RecomendPage/>}/>
         <Route path='/month' element={<MonthRecoPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/latest/:no' element={<MovieDetail/>}/>
-
+        <Route path='/latest/:no' element={<MoviePostDetail/>}/>
         <Route path='/free' element={<Community/>}/>
-
       </Routes>
     </div>
   );

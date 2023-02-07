@@ -9,11 +9,10 @@ function NewMovieList({list}) {
         <div className="NewMovie">
             <Link to={`/latest/${list.mov_no}`}>
                 <div className="NewMovie_img_div">
-                    <img src={`${API_URL}/${list.mov_img1}`} alt='' className="NewMovie_img"/>
+                    <img src={`${API_URL}/${list.mov_img}`} alt='' className="NewMovie_img"/>
                 </div>
                 <div className="NewMovie_desc">
                     <h4 className="NewMovie_title">{list.mov_title}</h4>
-                    <p className="NewMovie_subdesc">{list.mov_desc}</p>
                     <div className="NewMovie_score">평점 10.0</div>
                 </div>
             </Link>
