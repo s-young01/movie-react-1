@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     .box{
-        width: 32%;
+        width: 33%;
         padding: 30px 40px;
         background-color: #fff;
         height: 240px;
@@ -21,6 +21,7 @@
             li {
                 padding: 10px 0;
                 list-style: square;
+                // border-bottom: 1px solid #ccc;
             }
         }
     }

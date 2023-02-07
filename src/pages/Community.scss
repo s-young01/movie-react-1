@@ -1,39 +1,61 @@
-.table-striped {
-    margin-top: 200px;
-    margin-left: 500px;
-    width: 55%;
-    height: 600px;
-    background-color: #fff;
-    border-radius: 20px;
-    border-spacing: 0;
-        h3 {
-            display: flex;
-            justify-content:flex-start;
-            padding-top: 30px;
-            padding-left: 30px;
-            font-size: 30px;
+.community {
+    * {  padding: 0 !important;  box-sizing: border-box; }
+    margin-top: 80px;
+    h2 {
+        color: #fff;
+        width: 55%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+         // padding-top: 30px;
+         // padding-left: 30px;
+         // font-size: 30px;
+         // font-size: 20px;
+         // text-align: center;
+         // padding-bottom: 20px;
+         // padding-left: 20px;
+     }
+    .freetable {
+        width: 55%;
+        height: 37vh;
+        display: table;
+        background-color: #fff;
+        vertical-align: top;
+        border-radius: 15px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 200px;
+       
+        .category {
+            // background-color: #FF4C29;
+            border-bottom: 1px solid #faf3f3;
+            // padding: 0;
+            font-size: 17px;
+            // font-weight: bold;
+            color: #333;
+            padding: 15px 5px;
+            font-weight: bold;
         }
-        thead tr {
-            width: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0 auto;
-            padding: 50px 0 15px 40px;
-            font-size: 18px;
-        }
-        tbody {
-            padding-top: 10px;
-            display: flex;
-            flex-direction: column;
-            font-size: 15px;
-        }
-            tr:nth-child(1) {
-                border-top: 1px solid #ccc;
+            th:nth-child(1){
+                width: 10%;
             }
-            tr {
-                display: flex;
-                justify-content: space-around;
-                padding-top: 30px;
+            th:nth-child(2) {
+                width: 50%;
             }
+            th:nth-child(3) {
+                width: 20%;
+            }
+            th:nth-child(4) {
+                width: 20%;
+            }
+        td:hover{
+            background-color: rgb(246, 243, 243);
+            cursor: pointer;
+        }
+        td{
+            border-bottom: 1px solid #ccc;
+            padding: 0;
+            font-size: 14px;
+            padding: 11px 5px;
+        }
+    }
 }
