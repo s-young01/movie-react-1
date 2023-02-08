@@ -6,7 +6,6 @@ import MovieDetail from '../pages/subpages/MovieDetail';
 
 const MoviePostDetail = () => {
     const {no} = useParams();
-    console.log(`여기에요${no}`);
     const {loading, data, error} = useSelector(state => state.moviePost.moviePost);
     const dispatch = useDispatch();
     console.log(data);
