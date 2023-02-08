@@ -37,7 +37,8 @@ const FindPass = () => {
         <div className='inner outline'>
             <div className='findpass'>
                 <h2>비밀번호 찾기</h2>
-                {idInfo ? <div>당신의 아이디는 {idInfo}입니다<Link to="/login"><button className='logch'>로그인</button></Link></div>:
+                {idInfo ? <div>당신의 아이디는 {idInfo}입니다<Link to="/login">
+                    <button className='logch'>로그인</button></Link></div>:
                 <form className='enter' onSubmit={onSubmit}>
                     <table>
                         <tbody>
