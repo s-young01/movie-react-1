@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config/apiurl';
+import { setId } from '../../moduls/loginCheck';
 import "./FindPass.scss"
 
 
 const FindPass = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
     const [idInfo, setidInfo] = useState("")
     const [formData, setFormData] = useState({
         username:"",
@@ -24,7 +27,9 @@ const FindPass = () => {
         e.preventDefault();
         axios.post(`${API_URL}/findPass`, formData)
         .then(res=>{
+            console.log(res)
             setidInfo(res.data)
+            dispatch(setId(res.data))
         })
         .catch(e=>console.log(e))
     }
@@ -37,8 +42,8 @@ const FindPass = () => {
         <div className='inner outline'>
             <div className='findpass'>
                 <h2>비밀번호 찾기</h2>
-                {idInfo ? <div>당신의 아이디는 {idInfo}입니다<Link to="/login">
-                    <button className='logch'>로그인</button></Link></div>:
+                {idInfo ? <div>비밀번호를 변경할 수 있습니다<Link to="/editpass">
+                    <button className='logch'>비밀번호 변경하기</button></Link></div>:
                 <form className='enter' onSubmit={onSubmit}>
                     <table>
                         <tbody>

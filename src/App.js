@@ -13,6 +13,7 @@ import FindId from './pages/member/FindId';
 import FindPass from './pages/member/FindPass';
 import RecomendPostContainer from './container/RecomendPostContainer';
 import WriteText from './pages/WriteText';
+import Editpass from './pages/member/Editpass';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/write' element={<WriteText/>}/>
         <Route path='/findid' element={<FindId/>}/>
         <Route path='/findpass' element={<FindPass/>}/>
+        <Route path='/editpass' element={<Editpass/>}/>
       </Routes>
     </div>
   );
