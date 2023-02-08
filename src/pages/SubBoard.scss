@@ -3,6 +3,7 @@
     padding: 240px 0;
     display: flex;
     justify-content: space-between;
+    cursor: default;
     .box{
         width: 33%;
         padding: 30px 40px;
@@ -11,7 +12,7 @@
         margin-right: 10px;
         border-radius: 10px;
         h3 {
-            font-size: 22px;
+            font-size: 24px;
         }
         ul{
             text-align: left;
@@ -21,7 +22,6 @@
             li {
                 padding: 10px 0;
                 list-style: square;
-                // border-bottom: 1px solid #ccc;
             }
         }
     }

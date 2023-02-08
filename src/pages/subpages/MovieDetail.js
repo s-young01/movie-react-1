@@ -2,6 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player/lazy';
 import { API_URL } from '../../config/apiurl';
 import './MovieDetail.scss';
+import { FiFileText, FiYoutube } from "react-icons/fi";
 
 const MovieDetail = ({data}) => {
     return (
@@ -10,8 +11,7 @@ const MovieDetail = ({data}) => {
                 <div className='top_zone'>
                     <div className='left'>
                         <div className='title'>
-                            <h3>{data.mov_title}</h3>
-                                
+                            <h3>{data.mov_title}</h3>  
                         </div>
                         <div className='movieinfo'>
                             <div className='tablebox'>
@@ -65,12 +65,22 @@ const MovieDetail = ({data}) => {
                     </div>
                 </div>
                 <div className='moviedesc'>
-                        <p><strong>영화 줄거리</strong></p>
-                        <p>{data.mov_desc}</p>
+                        <p className='desctitle'>
+                            <strong>
+                                영화 줄거리
+                                <FiFileText className='icon'/>
+                            </strong>
+                        </p>
+                        <p className='desc'>{data.mov_desc}</p>
                 </div>
                 <div className='bottom_zone'>
+                    <p>
+                        <strong>
+                            영화 메인 예고편
+                            <FiYoutube className='icon'/>
+                        </strong>
+                    </p>
                     <div className='movie_trailer'>
-                        <p><strong>영화 메인 예고편</strong></p>
                         <ReactPlayer className="youtube"
                             url={`${data.mov_movelink}`}
                             width="600px"
