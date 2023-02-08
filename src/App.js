@@ -11,6 +11,7 @@ import MoviePostContainer from './container/MoviePostContainer';
 import MoviePostDetail from './container/MoviePostDetail';
 import './App.css';
 import FindId from './pages/member/FindId';
+import FindPass from './pages/member/FindPass';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/latest/:no' element={<MoviePostDetail/>}/>
         <Route path='/free' element={<Community/>}/>
         <Route path='/findid' element={<FindId/>}/>
+        <Route path='/findpass' element={<FindPass/>}/>
       </Routes>
     </div>
   );

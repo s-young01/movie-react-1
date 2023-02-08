@@ -11,8 +11,8 @@ const LoginPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [loginData, setLoginData] = useState({
-        id: "",
-        password: "",
+        userid: "",
+        userpassword: "",
     })
     const onChange = (e) => {
         const {name , value} = e.target
@@ -60,7 +60,7 @@ const LoginPage = () => {
                                     <span>아이디</span>
                                 </td>
                                 <td>
-                                    <input name='id' type='text' value={loginData.id} onChange={onChange}/>
+                                    <input name='userid' type='text' value={loginData.userid} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
@@ -68,7 +68,7 @@ const LoginPage = () => {
                                     <span>비밀번호</span>
                                 </td>
                                 <td>
-                                    <input name='password' type='password' value={loginData.password} onChange={onChange}/>
+                                    <input name='userpassword' type='password' value={loginData.userpassword} onChange={onChange}/>
                                 </td>
                             </tr>
                         </tbody>
@@ -76,7 +76,7 @@ const LoginPage = () => {
                     <ul className='find'>
                         <Link to="/findid"><li>아이디 찾기</li></Link>
                         <span>|</span>
-                        <li>비밀번호 찾기</li>
+                        <Link to="/findpass"><li>비밀번호 찾기</li></Link>
                     </ul>
                     <div className='login_btn'>
                         <button type="submit">로그인</button>
