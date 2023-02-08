@@ -1,6 +1,7 @@
 #newMovie {
     margin-top: 30px;
     position: relative;
+    cursor: default;
     #youtubeText{
         width: 100%;
         display: flex;
@@ -26,6 +27,7 @@
                 height: 60%;
                 font-size: 18px;
                 padding-top: 100px;
+                line-height: 1.6;
             }
         }
         .youtube{
