@@ -4,7 +4,6 @@ import Community from './pages/Community';
 import Main from './pages/Main';
 import JoinPage from './pages/member/JoinPage';
 import LoginPage from './pages/member/LoginPage';
-import RecomendPage from './pages/RecomendPage';
 import MonthRecoPage from './pages/subpages/MonthRecoPage';
 import YetMoviePage from './pages/subpages/YetMoviePage';
 import MoviePostContainer from './container/MoviePostContainer';
@@ -12,6 +11,7 @@ import MoviePostDetail from './container/MoviePostDetail';
 import './App.css';
 import FindId from './pages/member/FindId';
 import FindPass from './pages/member/FindPass';
+import RecomendPostContainer from './container/RecomendPostContainer';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <Route path='/join' element={<JoinPage/>}/>
         <Route path='/latest' element={<MoviePostContainer/>}/>
         <Route path='/yet' element={<YetMoviePage/>}/>
-        <Route path='/recomend' element={<RecomendPage/>}/>
+        <Route path='/recomend' element={<RecomendPostContainer/>}/>
         <Route path='/month' element={<MonthRecoPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/latest/:no' element={<MoviePostDetail/>}/>
