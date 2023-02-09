@@ -26,6 +26,8 @@ const Option = styled.option`
     padding: 3px 0;
 `;
 
+
+
 const JoinPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

@@ -14,6 +14,7 @@ import FindPass from './pages/member/FindPass';
 import RecomendPostContainer from './container/RecomendPostContainer';
 import WriteText from './pages/WriteText';
 import Editpass from './pages/member/Editpass';
+import GenreContainer from './container/GenreContainer';
 
 
 function App() {
@@ -28,12 +29,13 @@ function App() {
         <Route path='/recomend' element={<RecomendPostContainer/>}/>
         <Route path='/month' element={<MonthRecoPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/latest/:no' element={<MoviePostDetail/>}/>
+        <Route path='/detail/:no' element={<MoviePostDetail/>}/>
         <Route path='/free' element={<Community/>}/>
         <Route path='/write' element={<WriteText/>}/>
         <Route path='/findid' element={<FindId/>}/>
         <Route path='/findpass' element={<FindPass/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
+        <Route path='/genrepage' element={<GenreContainer/>}/>
       </Routes>
     </div>
   );

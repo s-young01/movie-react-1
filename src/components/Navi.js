@@ -32,7 +32,7 @@ const Navi = () => {
                         <div className='innermenu'>
                             <ul>
                                 <li><Link to='/month'>이달의 추천 영화</Link></li>
-                                <li>장르별 추천 영화</li>
+                                <li><Link to='/genrepage'>장르별 추천 영화</Link></li>
                             </ul>
                         </div>
                     </li>

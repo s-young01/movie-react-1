@@ -25,10 +25,10 @@ const initialState = {
 }
 
 //리듀서만들기
-export const getDatas = () => async dispatch => {
+export const getDatas = (callback) => async dispatch => {
     dispatch({type: GET_DATAS})
     try{
-        const response = await axios.get(`${API_URL}/latest`);
+        const response = await callback();
         const data = response.data
         dispatch({
             type: GET_DATAS_SUCCESS, data : data
@@ -41,7 +41,7 @@ export const getDatas = () => async dispatch => {
 export const getData = (no) => async dispatch => {
     dispatch({type: GET_DATA})
     try{
-        const response = await axios.get(`${API_URL}/latest/${no}`);
+        const response = await axios.get(`${API_URL}/detail/${no}`);
         const data = response.data[0];
         dispatch({
             type: GET_DATA_SUCCESS, data : data
