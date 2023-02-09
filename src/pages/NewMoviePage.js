@@ -25,7 +25,7 @@ function NewMovieList({list}) {
     }
     return (
         <div className="NewMovie">
-            <Link to={`/latest/${list.mov_no}`}>
+            <Link to={`/detail/${list.mov_no}`}>
                 <div className="NewMovie_img_div">
                     <img src={`${API_URL}/${list.mov_img}`} alt='' className="NewMovie_img"/>
                 </div>

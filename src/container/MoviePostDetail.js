@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { getData } from '../moduls/moviePost';
 import MovieDetail from '../pages/subpages/MovieDetail';
 
+
+
 const MoviePostDetail = () => {
     const {no} = useParams();
     const {loading, data, error} = useSelector(state => state.moviePost.moviePost);
