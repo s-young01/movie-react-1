@@ -15,6 +15,7 @@ import RecomendPostContainer from './container/RecomendPostContainer';
 import WriteText from './pages/WriteText';
 import Editpass from './pages/member/Editpass';
 import GenreContainer from './container/GenreContainer';
+import DetailView from './pages/DetailView';
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         <Route path='/findpass' element={<FindPass/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
         <Route path='/genrepage' element={<GenreContainer/>}/>
+        <Route path='/editpass' element={<Editpass/>}/>
+        <Route path='/detailfree' element={<DetailView/>}/>
       </Routes>
     </div>
   );

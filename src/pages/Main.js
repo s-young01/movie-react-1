@@ -4,6 +4,7 @@ import Latest from './Latest';
 import Recomend from './Recomend';
 import NewMovie from './NewMovie';
 import SubBoard from './SubBoard';
+import DetailView from './DetailView';
 
 const Main = () => {
     return (
@@ -11,7 +12,8 @@ const Main = () => {
             <NewMovie/>
             <Latest/>
             <Recomend/>
-            <SubBoard/>    
+            <SubBoard/> 
+            <DetailView/>   
         </div>
     );
 };
