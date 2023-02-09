@@ -84,8 +84,8 @@ const MovieDetail = ({data}) => {
                     <div className='movie_trailer'>
                         <ReactPlayer className="youtube"
                             url={`${data.mov_movelink}`}
-                            width="600px"
-                            heigh="400px"
+                            width="640px"
+                            heigh="auto"
                             muted={true}
                             playing={true}
                             loop={true}
