@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player/lazy';
 import { API_URL } from '../../config/apiurl';
 import './MovieDetail.scss';
 import { FiFileText, FiYoutube } from "react-icons/fi";
+import DetailCommend from '../../container/DetailCommend';
 
 const MovieDetail = ({data}) => {
     return (
@@ -92,6 +93,7 @@ const MovieDetail = ({data}) => {
                     </div>
                 </div>
             </div>
+            <DetailCommend/>
         </div>
     );
 };
