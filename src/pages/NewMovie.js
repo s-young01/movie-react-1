@@ -25,7 +25,7 @@ const NewMovie = () => {
         <div id="newMovie">
             <div id="youtubeText">
                 <div className="movieText">
-                    <h2>앤트맨 퀀텀매니아</h2>
+                    <h2>앤트맨과 와스프 <br/> 퀀텀매니아</h2>
                     <p>슈퍼히어로 파트너인 '스콧 랭'과 '호프 반 다인',
                         호프의 부모 '재닛 반 다인'과 '행크 핌',
                         그리고 스콧의 딸 '캐시 랭'까지
