@@ -4,11 +4,7 @@ import { Pagination } from 'antd';
 import { BiLike, BiDislike,BiCommentDetail, BiCommentEdit } from "react-icons/bi";
 
 const DetailCommend = () => {
-    // input / textarea 상태관리
-    const [inputCount, setInputCount] = useState(0);
-    const oninputHandeler = (e) => {
-        setInputCount(e.target.value.length);
-    }
+    // textarea 상태관리
     const [textCount, setTextCount] = useState(0);
     const ontextHandeler = (e) => {
         setTextCount(e.target.value.length);
@@ -16,7 +12,7 @@ const DetailCommend = () => {
     return (
         <div className='commendbox'>
             <div className='titlezone'>
-                <h3>영화 리뷰<BiCommentDetail className='icon2'/></h3>
+                <h3>영화 한줄평 <BiCommentDetail className='icon2'/></h3>
                 <nav>
                     <BiLike className='icon'/> : <span>10</span>
                     <BiDislike className='icon'/> : <span>3</span>
@@ -27,7 +23,7 @@ const DetailCommend = () => {
                     <thead>
                         <tr>
                             <th width='30%'>작성자</th>
-                            <th width='70%'>제목</th>
+                            <th width='70%'>한줄평</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,19 +52,27 @@ const DetailCommend = () => {
                 <Pagination defaultCurrent={1} total={50} />
             </div>
             <div className='writezone'>
-                <h3>리뷰 쓰기<BiCommentEdit className='icon2'/></h3>
+                <h3>한줄평 쓰기 <BiCommentEdit className='icon2'/></h3>
                 <div className='writebox'>
-                    <span>제목</span>
-                    <input maxLength={50} onChange={oninputHandeler}/>
-                    <p>
-                        <span>{inputCount}</span>/ 50자
-                    </p>
-                    <span>내용</span>
-                    <textarea maxLength={500} onChange={ontextHandeler}/>
-                    <p>
-                        <span>{textCount}</span>/ 500자
-                    </p>
-                    <button>등록</button>
+                    <div className='write'>
+                        <textarea maxLength={29} onChange={ontextHandeler}
+                        placeholder='이 영화의 한줄평을 자유롭게 적어주세요.'></textarea>
+                        <button>등록하기</button>
+                    </div>
+                    <div className='recomendzone'>
+                        <nav>
+                            <span>추천여부</span>
+                            <BiLike className='icon'/>
+                            <input name='recomend' type='radio' value='like'/>
+                            <BiDislike className='icon'/>
+                            <input name='recomend' type='radio' value='dislike'/>
+                        </nav>
+                        <p>
+                            <span>{textCount}</span> 
+                            <span>/</span> 
+                            <span>30자</span>
+                        </p>
+                    </div>
                 </div>
                 
             </div>

@@ -1,8 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import './Community.scss';
 
 const Community = () => {
+  const isLogin = useSelector(state => state.loginCheck.isLogin);
+  const navigate = useNavigate();
+  const onClick = () => {
+    if(!isLogin) {
+      alert('로그인이 필요한 서비스입니다.');
+      navigate('/login');
+    }else {
+      navigate('/write');
+    }
+  }
   return (
     <div className='everyboard'>
       <div>
@@ -44,7 +55,7 @@ const Community = () => {
             <td className='four'>2023-02-06</td>
           </tr>
           <div className='btn'>
-            <button><Link to='/write'>글쓰기</Link></button>
+            <button onClick={onClick}>글쓰기</button>
           </div>
         </tbody>
       </table>
