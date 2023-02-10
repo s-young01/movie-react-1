@@ -1,0 +1,21 @@
+.NewMovie_page {
+    h2{
+        margin-bottom: 1%;
+    }
+    .genreUl{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        padding: 10px 20px;
+        width: 100%;
+        background-color: #ccc;
+        border-radius: 20px;
+        li{
+            width: 20%;
+            margin: 10px 0;
+            list-style: none;
+            color: #333;
+            
+        }
+    }
+}
