@@ -5,7 +5,6 @@ import Main from './pages/Main';
 import JoinPage from './pages/member/JoinPage';
 import LoginPage from './pages/member/LoginPage';
 import MonthRecoPage from './pages/subpages/MonthRecoPage';
-import YetMoviePage from './pages/subpages/YetMoviePage';
 import MoviePostContainer from './container/MoviePostContainer';
 import MoviePostDetail from './container/MoviePostDetail';
 import './App.css';
@@ -16,6 +15,7 @@ import WriteText from './pages/WriteText';
 import Editpass from './pages/member/Editpass';
 import GenreContainer from './container/GenreContainer';
 import DetailView from './pages/DetailView';
+import YetMovieCon from './container/YetMovieCon';
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/join' element={<JoinPage/>}/>
         <Route path='/latest' element={<MoviePostContainer/>}/>
-        <Route path='/yet' element={<YetMoviePage/>}/>
+        <Route path='/yet' element={<YetMovieCon/>}/>
         <Route path='/recomend' element={<RecomendPostContainer/>}/>
         <Route path='/month' element={<MonthRecoPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
