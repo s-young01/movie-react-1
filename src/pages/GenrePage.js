@@ -65,10 +65,10 @@ const GenrePage = ({data}) => {
 })
 
     const onToggle = (id) => {
-        const newlist = isGenre.genrelist.map(gen=>gen.id == id ? {
+        const newlist = isGenre.genrelist.map(gen=>gen.id === id ? {
             ...gen,
             isDone: !gen.isDone
-        }: gen.id != id && gen.isDone == true ? {
+        }: gen.id !== id && gen.isDone === true ? {
             ...gen,
             isDone: !gen.isDone 
         }: gen)

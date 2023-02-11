@@ -2,20 +2,49 @@ import React, { useState } from 'react';
 import './DetailCommend.scss';
 import { Pagination } from 'antd';
 import { BiLike, BiDislike,BiCommentDetail, BiCommentEdit } from "react-icons/bi";
+import { useNavigate } from 'react-router-dom/dist';
+import { useDispatch, useSelector } from 'react-redux';
+import { dislike, like } from '../moduls/recoCount';
+import { getCookie } from '../util/cookie';
 
 const DetailCommend = () => {
+    const isLogin = useSelector(state => state.loginCheck.isLogin);
+    const likecount = useSelector(state => state.recoCount.getlike);
+    const dislikecount = useSelector(state => state.recoCount.getdislike);
+    // const istoggle = useSelector(state => state.recoCount.getlike.istoggle);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     // textarea 상태관리
     const [textCount, setTextCount] = useState(0);
     const ontextHandeler = (e) => {
         setTextCount(e.target.value.length);
+    }
+    // 등록하기 버튼 눌렀을 때
+    const onClick = () => {
+        if(!isLogin) {
+            alert('로그인이 필요한 서비스입니다.');
+            navigate('/login');
+        }
+    }
+    
+    const clickLike = () => {
+            dispatch(like());
+    }
+    const clikeDislike = () => {
+        dispatch(dislike());
     }
     return (
         <div className='commendbox'>
             <div className='titlezone'>
                 <h3>영화 한줄평 <BiCommentDetail className='icon2'/></h3>
                 <nav>
-                    <BiLike className='icon'/> : <span>10</span>
-                    <BiDislike className='icon'/> : <span>3</span>
+                    <span className='infosp'>
+                        ( 위 영화를 추천 / 비추천 하려면 아이콘을 누르세요. )
+                    </span>
+                    <BiLike className='icon' onClick={clickLike}/> 
+                    : <span>{likecount}</span>
+                    <BiDislike className='icon' onClick={clikeDislike}/> 
+                    : <span>{dislikecount}</span>
                 </nav>
             </div>
             <div className='commendzone'>
@@ -55,26 +84,16 @@ const DetailCommend = () => {
                 <h3>한줄평 쓰기 <BiCommentEdit className='icon2'/></h3>
                 <div className='writebox'>
                     <div className='write'>
-                        <textarea maxLength={29} onChange={ontextHandeler}
+                        <textarea maxLength={50} onChange={ontextHandeler}
                         placeholder='이 영화의 한줄평을 자유롭게 적어주세요.'></textarea>
-                        <button>등록하기</button>
+                        <button onClick={onClick}>등록하기</button>
                     </div>
-                    <div className='recomendzone'>
-                        <nav>
-                            <span>추천여부</span>
-                            <BiLike className='icon'/>
-                            <input name='recomend' type='radio' value='like'/>
-                            <BiDislike className='icon'/>
-                            <input name='recomend' type='radio' value='dislike'/>
-                        </nav>
-                        <p>
-                            <span>{textCount}</span> 
-                            <span>/</span> 
-                            <span>30자</span>
-                        </p>
-                    </div>
+                    <p>
+                        <span className='countsp'>{textCount}</span> 
+                        <span>/</span> 
+                        <span>50자</span>
+                    </p>
                 </div>
-                
             </div>
         </div>
     );
