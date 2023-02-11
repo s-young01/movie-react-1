@@ -14,6 +14,8 @@ import WriteText from './pages/WriteText';
 import Editpass from './pages/member/Editpass';
 import GenreContainer from './container/GenreContainer';
 import DetailView from './pages/DetailView';
+import YetMovieCon from './container/YetMovieCon';
+import MonthRecoContainer from './container/MonthRecoContainer';
 
 
 function App() {
