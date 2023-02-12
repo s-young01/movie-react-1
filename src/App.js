@@ -20,6 +20,7 @@ import Notice from './pages/Notice';
 import GenreChContainer from './container/GenreChContainer';
 import SearchPage from './pages/SearchPage';
 import SearchContainer from './container/SearchContainer';
+import WriteMovie from './pages/WriteMovie';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path='/detailfree' element={<DetailView/>}/>
         <Route path='/notice' element={<Notice/>}/>
         <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
+        <Route path='movieupdate' element={<WriteMovie/>}/>
       </Routes>
     </div>
   );

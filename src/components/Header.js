@@ -82,7 +82,10 @@ const Header = () => {
                     <span>|</span>
                     {isLogin ? <><li onClick={logoutClick}>로그아웃</li>
                     <span>|</span>
-                    <li>마이페이지</li></> :
+                    <li>마이페이지</li>
+                    {username === 'tpdud01' ? 
+                    <><span>|</span>
+                    <li><Link to='/movieupdate'>영화등록</Link></li></> : null}</> :
                     <><li><Link to='/login'>로그인</Link></li>
                     <span>|</span>
                     <li><Link to='/join'>회원가입</Link></li></>}
