@@ -1,0 +1,29 @@
+.writemovie {
+    padding-top: 80px;
+    h2 {
+        margin-top: 100px;
+        padding: 10px 0;
+        font-size: 28px;
+        color: #fff;
+    }
+    .writemoviebox {
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        .writemovietable {
+            width: 100%;
+            height: 600px;
+            padding: 20px;
+            td {
+                input {
+                    width: 100%;
+                }
+                textarea {
+                    width: 100%;
+                    height: 500px;
+                }
+            }
+        }
+    }
+}

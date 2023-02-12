@@ -16,6 +16,7 @@ import GenreContainer from './container/GenreContainer';
 import DetailView from './pages/DetailView';
 import YetMovieCon from './container/YetMovieCon';
 import MonthRecoContainer from './container/MonthRecoContainer';
+import WriteMovie from './pages/WriteMovie';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path='/genrepage' element={<GenreContainer/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
         <Route path='/detailfree' element={<DetailView/>}/>
+        <Route path='movieupdate' element={<WriteMovie/>}/>
       </Routes>
     </div>
   );
