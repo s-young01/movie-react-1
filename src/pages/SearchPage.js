@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link} from 'react-router-dom';
 import { API_URL } from '../config/apiurl';
 import "./NewMoviePage.scss";
 import "./GenrePage.scss"
+
+
 
 
 // div map 돌려서 뿌려줄 컴포넌트 만들기
@@ -43,27 +45,15 @@ function NewMovieList({list}) {
     );
 }
 
-
-
-const GenrePage = ({data, genrelist, onToggle}) => {
-    console.log(11111)
-    console.log(genrelist)
-    
+const SearchPage = ({data}) => {
     return (
         <div className="NewMovie_page">
-            <h2>장르영화</h2>
-            <ul className='genreUl'>
-                {genrelist.map(gen=><li key={gen.id} value={gen.genrechange} style={{fontWeight: gen.isDone ? "bold" :"normal" }}>
-                    <Link to={`/genrepage/${gen.genrechange}`}>
-                    <span onClick={()=>{onToggle(gen.id)}}>{gen.genrelist}</span>
-                    </Link>
-                    </li>)}
-            </ul>
+            <h2>검색한 결과</h2>
             <div className="NewMovie_box">
-                {data.map(d => <NewMovieList key={d.mov_no} list={d}/>)}
+                {data.map(da => <NewMovieList key={da.mov_no} list={da}/>)}
             </div>
         </div>
     );
 };
 
-export default GenrePage;
+export default SearchPage;

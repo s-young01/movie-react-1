@@ -12,10 +12,14 @@ import FindPass from './pages/member/FindPass';
 import RecomendPostContainer from './container/RecomendPostContainer';
 import WriteText from './pages/WriteText';
 import Editpass from './pages/member/Editpass';
-import GenreContainer from './container/GenreContainer';
+//import GenreContainer from './container/GenreContainer';
 import DetailView from './pages/DetailView';
 import YetMovieCon from './container/YetMovieCon';
 import MonthRecoContainer from './container/MonthRecoContainer';
+import Notice from './pages/Notice';
+import GenreChContainer from './container/GenreChContainer';
+import SearchPage from './pages/SearchPage';
+import SearchContainer from './container/SearchContainer';
 
 
 function App() {
@@ -36,9 +40,11 @@ function App() {
         <Route path='/findid' element={<FindId/>}/>
         <Route path='/findpass' element={<FindPass/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
-        <Route path='/genrepage' element={<GenreContainer/>}/>
+        <Route path='/genrepage/:genrechange' element={<GenreChContainer/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
         <Route path='/detailfree' element={<DetailView/>}/>
+        <Route path='/notice' element={<Notice/>}/>
+        <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
       </Routes>
     </div>
   );

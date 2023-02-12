@@ -45,9 +45,10 @@ function NewMovieList({list}) {
 
 
 
-const GenrePage = ({data, genrelist, onToggle}) => {
-    console.log(11111)
-    console.log(genrelist)
+const GenrePageSelect = ({data, genrelist, onToggle}) => {
+    //console.log(11111)
+    //console.log(genrelist)
+    //console.log(data)
     
     return (
         <div className="NewMovie_page">
@@ -66,4 +67,4 @@ const GenrePage = ({data, genrelist, onToggle}) => {
     );
 };
 
-export default GenrePage;
+export default GenrePageSelect;
