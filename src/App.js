@@ -36,7 +36,7 @@ function App() {
         <Route path='/month' element={<MonthRecoContainer/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/detail/:no' element={<MoviePostDetail/>}/>
-        <Route path='/free' element={<Community/>}/>
+        <Route path='/free/:title/:desc/:date/:nickname' element={<Community/>}/>
         <Route path='/write' element={<WriteText/>}/>
         <Route path='/findid' element={<FindId/>}/>
         <Route path='/findpass' element={<FindPass/>}/>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Community.scss';
 
-const Community = () => {
+const Community = ({textlist}) => {
   const isLogin = useSelector(state => state.loginCheck.isLogin);
+  console.log(useParams(textlist))
   const navigate = useNavigate();
   const onClick = () => {
     if(!isLogin) {
