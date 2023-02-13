@@ -13,12 +13,12 @@ const selectStyle = {
     backgroundColor: "#334756",
     color: "#fff",
     outline: 0,
-    fontSize: "18px"
+    fontSize: "14px",
+    width: "80px"
 }
 
 const Header = () => {
     const isLogin = useSelector(state=>state.loginCheck.isLogin);
-    //console.log(isLogin)
     const username = getCookie('usernickname');
     const dispatch = useDispatch();
     const logoutClick = () =>{

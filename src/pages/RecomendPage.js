@@ -6,20 +6,22 @@ import "./NewMoviePage.scss";
 function RecomendMovieList({list}) {
     const ss = {
         overflow: "hidden",
-        height: "100px"
+        height: "110px"
     }
     const jj ={
-        lineHeight: "20px"
+        fontSize: "14px",
+        lineHeight: "1.6"
     }
     const ll = {
-        marginTop: "20px"
+        marginTop: "20px",
+        textAlign: "right"
     }
     const ff = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
     }
-    const ww ={
+    const ww = {
         height: "50px"
     }
     return (
@@ -41,10 +43,12 @@ function RecomendMovieList({list}) {
 }
 const RecomendPage = ({data}) => {
     return (
-        <div className="NewMovie_page">
-            <h2>추천영화 - 전체보기</h2>
-            <div className="NewMovie_box">
-                {data.map(d => <RecomendMovieList key={d.mov_no} list={d}/>)}
+        <div className="inner">
+            <div className='NewMovie_page'>
+                <h2>추천영화 - 전체보기</h2>
+                <div className="NewMovie_box">
+                    {data.map(d => <RecomendMovieList key={d.mov_no} list={d}/>)}
+                </div>
             </div>
         </div>
     );

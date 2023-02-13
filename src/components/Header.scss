@@ -16,10 +16,10 @@ header {
         cursor: pointer;
     }
     #search {
-        width: 70%;
-        padding-left: 50%;
+        width: 60%;
+        padding-left: 40%;
         .searchbox {
-            width: 350px;
+            width: 400px;
             height: 55px;
             display: flex;
             background-color: #334756;
@@ -27,7 +27,7 @@ header {
             border-radius: 45px;
             input {
                 padding: 16px; 
-                width: 90%;
+                width: 75%;
                 outline: 0;
                 border: 0;
                 background-color: #334756;
@@ -37,6 +37,7 @@ header {
                 width: 36px;
                 height: 36px;
                 border: 0;
+                outline: 0;
                 border-radius: 50%;
                 background-color: #fff;
                 position: relative;

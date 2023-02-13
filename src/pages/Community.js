@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pagination } from 'antd';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Community.scss';
@@ -16,50 +17,60 @@ const Community = ({textlist}) => {
     }
   }
   return (
-    <div className='everyboard'>
-      <div>
+    <div className='everyboard inner'>
+      <div className='boardbox'>
         <h2>자유게시판</h2>
+          <table className='freetable'>
+            <thead>
+                <tr className='category'>
+                    <th width='10%'>번호</th>
+                    <th width='45%'>제목</th>
+                    <th width='25%'>작성자</th>
+                    <th width='20%'>등록일</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                <Link to='/detailfree'><span>제목입니다</span></Link>
+                </td>
+                <td>이창민</td>
+                <td>2023-02-06</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                <Link to='/detailfree'><span>제목입니다</span></Link>
+                </td>
+                <td>권세영</td>
+                <td>2023-02-06</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <Link to='/detailfree'><span>제목입니다</span></Link>
+                </td>
+                <td>남민섭</td>
+                <td>2023-02-06</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>
+                <Link to='/detailfree'><span>제목입니다</span></Link>
+                </td>
+                <td>김주원</td>
+                <td>2023-02-06</td>
+              </tr>
+            </tbody>
+        </table>
+        <div className='nav'>
+            <Pagination defaultCurrent={1} total={50} className='pagination'/>
+            <div>
+              <button onClick={onClick} className='writebtn'>글쓰기</button>
+            </div>
+        </div>
       </div>
-      <hr/>
-      <table className='freetable'>
-        <thead>
-            <tr className='category'>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>등록일</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className='one'>1</td>
-            <td className='two'><Link to='/detailfree'>제목입니다</Link></td>
-            <td className='three'>이창민</td>
-            <td className='four'>2023-02-06</td>
-          </tr>
-          <tr>
-            <td className='one'>2</td>
-            <td className='two'><Link to='/detailfree'>제목입니다</Link></td>
-            <td className='three'>권세영</td>
-            <td className='four'>2023-02-06</td>
-          </tr>
-          <tr>
-            <td className='one'>3</td>
-            <td className='two'><Link to='/detailfree'>제목입니다</Link></td>
-            <td className='three'>남민섭</td>
-            <td className='four'>2023-02-06</td>
-          </tr>
-          <tr>
-            <td className='one'>4</td>
-            <td className='two'><Link to='/detailfree'>제목입니다</Link></td>
-            <td className='three'>김주원</td>
-            <td className='four'>2023-02-06</td>
-          </tr>
-          <div className='btn'>
-            <button onClick={onClick}>글쓰기</button>
-          </div>
-        </tbody>
-      </table>
     </div>
   )
 }

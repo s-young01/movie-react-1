@@ -26,7 +26,7 @@ function NewMovieList({list}) {
         height: "50px"
     }
     return (
-        <div className="NewMovie">
+        <div className="NewMovie inner">
             <Link to={`/detail/${list.mov_no}`}>
                 <div className="NewMovie_img_div">
                     <img src={`${API_URL}/${list.mov_img}`} alt='' className="NewMovie_img"/>
@@ -51,7 +51,7 @@ const GenrePageSelect = ({data, genrelist, onToggle}) => {
     //console.log(data)
     
     return (
-        <div className="NewMovie_page">
+        <div className="NewMovie_page inner">
             <h2>장르영화</h2>
             <ul className='genreUl'>
                 {genrelist.map(gen=><li key={gen.id} value={gen.genrechange} style={{fontWeight: gen.isDone ? "bold" :"normal" }}>
