@@ -21,6 +21,7 @@ import GenreChContainer from './container/GenreChContainer';
 import SearchPage from './pages/SearchPage';
 import SearchContainer from './container/SearchContainer';
 import WriteMovie from './pages/WriteMovie';
+import Review from './pages/Review';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <Route path='/notice' element={<Notice/>}/>
         <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
         <Route path='movieupdate' element={<WriteMovie/>}/>
+        <Route path="/test" element={<Review />} />
       </Routes>
     </div>
   );

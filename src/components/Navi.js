@@ -37,7 +37,7 @@ const Navi = () => {
                         </div>
                     </li>
                     <li>
-                        <span>영화리뷰</span>
+                        <span><Link to='/test'>영화리뷰</Link></span>
                     </li>
                     <li>
                         <span>커뮤니티</span>
