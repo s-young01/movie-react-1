@@ -7,14 +7,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCookie, removeCookie } from '../util/cookie';
 import { setLogin, setLogout } from '../moduls/loginCheck';
 
-
 const selectStyle = {
     border: 0,
     backgroundColor: "#334756",
     color: "#fff",
     outline: 0,
     fontSize: "14px",
-    width: "80px"
+    fontFamily: "'GoyangIlsan', sans-serif",
+    width: "70px"
 }
 
 const Header = () => {
@@ -61,7 +61,9 @@ const Header = () => {
     return (
         <header>
             <Navi/>
-            <h1><Link to='/'>LOGO</Link></h1>
+            <h1>
+                <Link to='/'><img src='/images/mainlogo.png' alt=''/></Link>
+            </h1>
             <div id='search'>
                 <div className='searchbox'>
                     <select name="colume" style={{...selectStyle}} value={isSearch.colume} onChange={onChange}>
@@ -81,8 +83,6 @@ const Header = () => {
                     <li><Link to='/'>HOME</Link></li>
                     <span>|</span>
                     {isLogin ? <><li onClick={logoutClick}>로그아웃</li>
-                    <span>|</span>
-                    <li>마이페이지</li>
                     {username === 'tpdud01' ? 
                     <><span>|</span>
                     <li><Link to='/movieupdate'>영화등록</Link></li></> : null}</> :

@@ -1,16 +1,15 @@
 .NewMovie_page{
-    margin-top: 200px;
-    margin-bottom: 120px;
+    margin: 180px 0 120px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: default;
     h2 {
-        padding-bottom: 20px;
+        padding: 0 0 20px 20px;
         color: #fff;
-        font-size: 28px;
+        font-size: 32px;
     }
-    .NewMovie_box{
+    .NewMovie_box {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -24,6 +23,7 @@
             height: 100%;
             margin-bottom: 60px;
             flex-direction: column;
+            margin: 0 13.6px 60px;
             .NewMovie_img_div{
                 text-align: center;
             }
@@ -31,6 +31,7 @@
                 width: 100%;
                 height: 350px;
                 border: 1px solid #eee; 
+                border-radius: 2px;
             }
             .NewMovie_desc {
                 padding: 10px;

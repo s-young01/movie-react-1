@@ -41,10 +41,12 @@ function YetMovieList({list}) {
 }
 const YetMoviePage = ({data}) => {
     return (
-        <div className="NewMovie_page">
-            <h2>최신영화 - 개봉 예정작</h2>
-            <div className="NewMovie_box">
-                {data.map(d => <YetMovieList key={d.mov_no} list={d}/>)}
+        <div className='inner'>
+            <div className="NewMovie_page">
+                <h2>최신영화 - 개봉 예정작</h2>
+                <div className="NewMovie_box">
+                    {data.map(d => <YetMovieList key={d.mov_no} list={d}/>)}
+                </div>
             </div>
         </div>
     );

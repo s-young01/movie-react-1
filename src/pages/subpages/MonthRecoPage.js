@@ -7,20 +7,22 @@ import "../NewMoviePage.scss";
 function MonthRecoList({list}) {
     const ss = {
         overflow: "hidden",
-        height: "100px"
+        height: "110px"
     }
     const jj ={
-        lineHeight: "20px"
+        fontSize: "14px",
+        lineHeight: "1.6"
     }
     const ll = {
-        marginTop: "20px"
+        marginTop: "20px",
+        textAlign: "right"
     }
     const ff = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
     }
-    const ww ={
+    const ww = {
         height: "50px"
     }
     return (
@@ -34,7 +36,10 @@ function MonthRecoList({list}) {
                     <div style={{...ss}}>
                         <p style={{...jj}}>{list.mov_desc}</p>
                     </div>
-                    <div className="NewMovie_score" style={{...ll}}>평점 {list.mov_score}</div>
+                    <div className="NewMovie_score" style={{...ll}}>
+                        <span>평점</span> 
+                        <span>{list.mov_score}</span>
+                    </div>
                 </div>
             </Link>
         </div>
@@ -43,10 +48,12 @@ function MonthRecoList({list}) {
 
 const MonthRecoPage = ({data}) => {
     return (
-        <div className="NewMovie_page">
-            <h2>2월의 추천영화</h2>
-            <div className="NewMovie_box">
-                {data.map(d => <MonthRecoList key={d.mov_no} list={d}/>)}
+        <div className='inner'>
+            <div className="NewMovie_page">
+                <h2>2월의 추천영화</h2>
+                <div className="NewMovie_box">
+                    {data.map(d => <MonthRecoList key={d.mov_no} list={d}/>)}
+                </div>
             </div>
         </div>
     );

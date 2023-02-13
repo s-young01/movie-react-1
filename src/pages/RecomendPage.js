@@ -35,7 +35,10 @@ function RecomendMovieList({list}) {
                     <div style={{...ss}}>
                         <p style={{...jj}}>{list.mov_desc}</p>
                     </div>
-                    <div className="NewMovie_score" style={{...ll}}>평점 {list.mov_score}</div>
+                    <div className="NewMovie_score" style={{...ll}}>
+                        <span>평점</span> 
+                        <span>{list.mov_score}</span>
+                    </div>
                 </div>
             </Link>
         </div>

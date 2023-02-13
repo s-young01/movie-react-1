@@ -14,10 +14,14 @@ header {
         font-size: 38px;
         color: #FF4C29;
         cursor: pointer;
+        img {
+            width: 68%;
+            vertical-align: middle;
+        }
     }
     #search {
-        width: 60%;
-        padding-left: 40%;
+        width: 70%;
+        padding-left: 48%;
         .searchbox {
             width: 400px;
             height: 55px;
