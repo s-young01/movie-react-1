@@ -9,20 +9,22 @@ import "./GenrePage.scss"
 function NewMovieList({list}) {
     const ss = {
         overflow: "hidden",
-        height: "100px"
+        height: "110px"
     }
     const jj ={
-        lineHeight: "20px"
+        fontSize: "14px",
+        lineHeight: "1.6"
     }
     const ll = {
-        marginTop: "20px"
+        marginTop: "20px",
+        textAlign: "right"
     }
     const ff = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
     }
-    const ww ={
+    const ww = {
         height: "50px"
     }
     return (
@@ -36,7 +38,10 @@ function NewMovieList({list}) {
                     <div style={{...ss}}>
                         <p style={{...jj}}>{list.mov_desc}</p>
                     </div>
-                    <div className="NewMovie_score" style={{...ll}}>평점 {list.mov_score}</div>
+                    <div className="NewMovie_score" style={{...ll}}>
+                        <span>평점</span> 
+                        <span>{list.mov_score}</span>
+                    </div>
                 </div>
             </Link>
         </div>
@@ -51,17 +56,20 @@ const GenrePageSelect = ({data, genrelist, onToggle}) => {
     //console.log(data)
     
     return (
-        <div className="NewMovie_page inner">
-            <h2>장르영화</h2>
-            <ul className='genreUl'>
-                {genrelist.map(gen=><li key={gen.id} value={gen.genrechange} style={{fontWeight: gen.isDone ? "bold" :"normal" }}>
-                    <Link to={`/genrepage/${gen.genrechange}`}>
-                    <span onClick={()=>{onToggle(gen.id)}}>{gen.genrelist}</span>
-                    </Link>
-                    </li>)}
-            </ul>
-            <div className="NewMovie_box">
-                {data.map(d => <NewMovieList key={d.mov_no} list={d}/>)}
+        <div className='inner'>
+            <div className="NewMovie_page">
+                <h2 className='genreh2'>장르별 추천 영화</h2>
+                <ul className='genreUl'>
+                    {genrelist.map(gen=><li key={gen.id} value={gen.genrechange} style={
+                        {fontWeight: gen.isDone ? "bold" : "" , color: gen.isDone ? "#FF4C29" : ""}}>
+                        <Link to={`/genrepage/${gen.genrechange}`}>
+                        <span onClick={()=>{onToggle(gen.id)}}>{gen.genrelist}</span>
+                        </Link>
+                        </li>)}
+                </ul>
+                <div className="NewMovie_box">
+                    {data.map(d => <NewMovieList key={d.mov_no} list={d}/>)}
+                </div>
             </div>
         </div>
     );
