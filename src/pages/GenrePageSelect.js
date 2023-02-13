@@ -26,7 +26,7 @@ function NewMovieList({list}) {
         height: "50px"
     }
     return (
-        <div className="NewMovie inner">
+        <div className="NewMovie">
             <Link to={`/detail/${list.mov_no}`}>
                 <div className="NewMovie_img_div">
                     <img src={`${API_URL}/${list.mov_img}`} alt='' className="NewMovie_img"/>

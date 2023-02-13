@@ -1,6 +1,8 @@
 import React from 'react';
 import './SubBoard.scss';
 
+
+
 const SubBoard = () => {
     return (
         <div className='sboard inner'>

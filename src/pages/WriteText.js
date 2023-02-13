@@ -7,13 +7,21 @@ import './WriteText.scss';
 
 const WriteText = () => {
     let time = new Date()
+    let year = time.getFullYear();
+    let month = time.getMonth() +1;
+    let date = time.getDate();
+    let day = time.getDay();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+
 
     const navigate = useNavigate()
     const [isText, setText] = useState({
         t_title:"",
         t_desc: "",
         t_nickname: getCookie("usernickname"),
-        t_date: time.toLocaleTimeString()
+        t_date: `${year}-${month}-${date}`
     })
     const onChange = (e) => {
         const {name, value} = e.target;
@@ -25,6 +33,11 @@ const WriteText = () => {
         })
         
     }
+
+    const listbt = () => {
+        navigate("/free")
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
         if(isText.t_title !=="" && isText.t_desc !== "" ){
@@ -37,8 +50,7 @@ const WriteText = () => {
         .then(res=> {
             console.log(res.data)
             alert('등록되었습니다.');
-            const {t_title, t_desc, t_nickname, t_date } = res.data
-            navigate(`/free/${t_title}/${t_desc}/${t_nickname}/${t_date}`)
+            navigate(`/free`)
             
         })
         .catch(e=>{
@@ -60,7 +72,7 @@ const WriteText = () => {
                     placeholder='내용을 입력하세요' onChange={onChange} value={isText.t_desc}></textarea>
                 </div>
                 <button className="submit-button" type="submit">입력</button>
-                <button className="submit-button">취소</button>
+                <button className="submit-button" type="reset" onClick={listbt}>취소</button>
             </form>
       </div>
     )

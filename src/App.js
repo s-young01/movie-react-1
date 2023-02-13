@@ -22,6 +22,7 @@ import SearchPage from './pages/SearchPage';
 import SearchContainer from './container/SearchContainer';
 import WriteMovie from './pages/WriteMovie';
 import Review from './pages/Review';
+import EditDetailView from './pages/EditDetailView';
 
 
 function App() {
@@ -37,18 +38,19 @@ function App() {
         <Route path='/month' element={<MonthRecoContainer/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/detail/:no' element={<MoviePostDetail/>}/>
-        <Route path='/free/:title/:desc/:date/:nickname' element={<Community/>}/>
+        <Route path='/free' element={<Community/>}/>
         <Route path='/write' element={<WriteText/>}/>
         <Route path='/findid' element={<FindId/>}/>
         <Route path='/findpass' element={<FindPass/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
         <Route path='/genrepage/:genrechange' element={<GenreChContainer/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
-        <Route path='/detailfree' element={<DetailView/>}/>
+        <Route path='/detailfree/:no' element={<DetailView/>}/>
         <Route path='/notice' element={<Notice/>}/>
         <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
         <Route path='movieupdate' element={<WriteMovie/>}/>
         <Route path="/test" element={<Review />} />
+        <Route path="/editText/:no/:title/:name/:desc/:date" element={<EditDetailView />} />
       </Routes>
     </div>
   );
