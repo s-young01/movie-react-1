@@ -1,14 +1,23 @@
-import axios from "axios";
-import { API_URL } from "../config/apiurl";
-
-
 //액션타입
 const GET_DATAS = "moviePost/GET_DATAS";
 const GET_DATAS_SUCCESS = "moviePost/GET_DATAS_SUCCESS";
 const GET_DATAS_ERROR = "moviePost/GET_DATAS_ERROR";
+
 const GET_DATA = "moviePost/GET_DATA";
 const GET_DATA_SUCCESS = "moviePost/GET_DATA_SUCCESS";
 const GET_DATA_ERROR = "moviePost/GET_DATA_ERROR";
+
+const GET_REVIEWS = "GET_REVIEWS";
+const GET_REVIEWS_SUCCESS = "GET_REVIEWS_SUCCESS";
+const GET_REVIEWS_ERROR = "GET_REVIEWS_ERROR";
+
+const GET_NOTICES = "GET_NOTICES";
+const GET_NOTICES_SUCCESS = "GET_NOTICES_SUCCESS";
+const GET_NOTICES_ERROR = "GET_NOTICES_ERROR";
+
+const GET_COMMENDS = "GET_COMMENDS";
+const GET_COMMENDS_SUCCESS = "GET_COMMENDS_SUCCESS";
+const GET_COMMENDS_ERROR = "GET_COMMENDS_ERROR";
 
 //초기값
 const initialState = {
@@ -21,7 +30,22 @@ const initialState = {
         loading: false,
         data: null,
         error: null
-    }
+    },
+    reviewPosts: {
+        loading: false,
+        data: null,
+        error: null
+    },
+    noticePosts: {
+        loading: false,
+        data: null,
+        error: null
+    },
+    commends: {
+        loading: false,
+        data: null,
+        error: null
+    },
 }
 
 //리듀서만들기
@@ -31,7 +55,6 @@ export const getDatas = callback => async dispatch => {
         const response = await callback();
         console.log(response)
         const data = response.data
-        //console.log(data)
         dispatch({
             type: GET_DATAS_SUCCESS, data : data
         })
@@ -40,12 +63,12 @@ export const getDatas = callback => async dispatch => {
         dispatch({type: GET_DATAS_ERROR, error: e})        
     }
 }
+
 export const getData = callback => async dispatch => {
     dispatch({type: GET_DATA})
     try{
         const response = await callback();
         const data = response.data[0];
-        console.log(data)
         dispatch({
             type: GET_DATA_SUCCESS, data : data
         })
@@ -55,7 +78,51 @@ export const getData = callback => async dispatch => {
     }
 }
 
+export const getReviews = callback => async dispatch => {
+    dispatch({type: GET_REVIEWS})
+    try {
+        const response = await callback();
+        const data = response.data;
+        dispatch({
+            type: GET_REVIEWS_SUCCESS,
+            data: data
+        })
+    }
+    catch(e) {
+        dispatch({type: GET_REVIEWS_ERROR})
+    }
+}
 
+export const getNotices = callback => async dispatch => {
+    dispatch({type: GET_NOTICES})
+    try {
+        const response = await callback();
+        const data = response.data;
+        dispatch({
+            type: GET_NOTICES_SUCCESS,
+            data: data
+        })
+    }
+    catch(e) {
+        dispatch({type: GET_NOTICES_ERROR})
+    }
+}
+
+export const getCommends = callback => async dispatch => {
+    dispatch({type: GET_COMMENDS})
+    try {
+        const response = await callback();
+        const data = response.data;
+        dispatch({
+            type: GET_COMMENDS_SUCCESS,
+            data: data
+        })
+    }
+    catch(e) {
+        dispatch({type: GET_COMMENDS_ERROR,
+        error:e})
+    }
+}
 
 //리듀서 만들기
 export default function moviePost(state=initialState, action) {
@@ -87,6 +154,7 @@ export default function moviePost(state=initialState, action) {
                     error: action.error
                 }
             };
+
         // 하나씩 받아올 때 
         case GET_DATA:
             return {
@@ -111,6 +179,93 @@ export default function moviePost(state=initialState, action) {
             return {
                 ...state,
                 moviePost: {
+                    loading: false,
+                    data: null,
+                    error: action.error
+                }
+            };
+        
+        // 리뷰 받아올 때
+        case GET_REVIEWS:
+            return {
+                ...state,
+                reviewPosts: {
+                    loading: true,
+                    data: null,
+                    error: null
+                }
+            };
+        case GET_REVIEWS_SUCCESS:
+            return {
+                ...state,
+                reviewPosts: {
+                    loading: false,
+                    data: action.data,
+                    error: null
+                }
+            };
+        case GET_REVIEWS_ERROR:
+            return {
+                ...state,
+                reviewPosts: {
+                    loading: false,
+                    data: null,
+                    error: action.error
+                }
+            };
+
+        // 공지사항 받아올 때
+        case GET_NOTICES:
+            return {
+                ...state,
+                noticePosts: {
+                    loading: true,
+                    data: null,
+                    error: null
+                }
+            };
+        case GET_NOTICES_SUCCESS:
+            return {
+                ...state,
+                noticePosts: {
+                    loading: false,
+                    data: action.data,
+                    error: null
+                }
+            };
+        case GET_NOTICES_ERROR:
+            return {
+                ...state,
+                noticePosts: {
+                    loading: false,
+                    data: null,
+                    error: action.error
+                }
+            };
+        
+        // 상세 한줄평 받아올 때
+        case GET_COMMENDS:
+            return {
+                ...state,
+                commends: {
+                    loading: true,
+                    data: null,
+                    error: null
+                }
+            };
+        case GET_COMMENDS_SUCCESS:
+            return {
+                ...state,
+                commends: {
+                    loading: false,
+                    data: action.data,
+                    error: null
+                }
+            };
+        case GET_COMMENDS_ERROR:
+            return {
+                ...state,
+                commends: {
                     loading: false,
                     data: null,
                     error: action.error

@@ -11,8 +11,22 @@
         height: 240px;
         margin-right: 10px;
         border-radius: 10px;
-        h3 {
-            font-size: 24px;
+        .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            h3 {
+                font-size: 24px;
+            }
+            nav {
+                font-weight: bold;
+                span {
+                    padding-left: 5px;
+                }
+                .plussp {  
+                    color: #FF4C29;
+                }
+            }
         }
         ul{
             text-align: left;

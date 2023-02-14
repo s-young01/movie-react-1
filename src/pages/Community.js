@@ -13,10 +13,7 @@ const mm = {
   color: "#fff"
 }
 
-
 const Community = () => {
-
-
   const isLogin = useSelector(state => state.loginCheck.isLogin);
   const navigate = useNavigate();
   const onClick = () => {

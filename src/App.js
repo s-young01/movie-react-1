@@ -22,6 +22,8 @@ import WriteMovie from './pages/WriteMovie';
 import Review from './pages/Review';
 import EditDetailView from './pages/EditDetailView';
 import NoticeDetailView from './pages/NoticeDetailView';
+import EditNotice from './pages/EditNotice';
+import WriteNotice from './pages/WriteNotice';
 
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
         <Route path='/detail/:no' element={<MoviePostDetail/>}/>
         <Route path='/free' element={<Community/>}/>
         <Route path='/write' element={<WriteText/>}/>
+        <Route path='/writenotice' element={<WriteNotice/>}/>
         <Route path='/findid' element={<FindId/>}/>
         <Route path='/findpass' element={<FindPass/>}/>
         <Route path='/editpass' element={<Editpass/>}/>
@@ -46,6 +49,7 @@ function App() {
         <Route path='/editpass' element={<Editpass/>}/>
         <Route path='/detailfree/:no' element={<DetailView/>}/>
         <Route path='/notice' element={<Notice/>}/>
+        <Route path='/editnotice/:no/:title/:name/:desc/:date' element={<EditNotice/>}/>
         <Route path='/noticefree/:no' element={<NoticeDetailView/>}/>
         <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
         <Route path='movieupdate' element={<WriteMovie/>}/>

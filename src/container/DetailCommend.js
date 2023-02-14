@@ -1,54 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './DetailCommend.scss';
 import { Pagination } from 'antd';
 import { BiLike, BiDislike,BiCommentDetail, BiCommentEdit } from "react-icons/bi";
-import { useNavigate } from 'react-router-dom/dist';
-import { useSelector } from 'react-redux';
-import { getCookie, removeCookie } from '../util/cookie';
+import WriteCommend from '../pages/WriteCommend';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCommends } from '../moduls/moviePost';
+import axios from 'axios';
+import { API_URL } from '../config/apiurl';
 
-const DetailCommend = () => {
-    const isLogin = useSelector(state => state.loginCheck.isLogin);
-    const navigate = useNavigate();
-    // 한줄평 상태관리
-    const [inputText, setInputText] = useState('');
-    const [commList, setCommList] = useState([]);
-     // textarea 글자 수 상태관리
-    const [textCount, setTextCount] = useState(0);
-    // 등록하기 버튼 눌렀을 때
-    const onClick = () => {
-        const username = getCookie('usernickname');
-        if(!isLogin) {
-            removeCookie('usernickname');
-            alert('로그인이 필요한 서비스입니다.');
-            navigate('/login');
-        }else {
-            const newList = [
-                ...commList,
-                {
-                    id: commList.length + 1,
-                    user: username,
-                    text: inputText
-                }
-            ]
-            setCommList(newList);
-            setInputText('');
-            setTextCount(0);
-            console.log(typeof commList);
-        }
+const DetailCommend = ({movno}) => {
+    const onSign = () => {
+        dispatch(getCommends(commendData));
     }
-   
-    const onChange = (e) => {
-        setInputText(e.target.value);
-        setTextCount(e.target.value.length);
-    }
+    const {loading, data, error} = useSelector(state => state.moviePost.commends);
+    const dispatch = useDispatch();
+    console.log(`여기에요 ${movno}`)
+    const commendData = async () => {
+        console.log('aaa');
+        const data = await axios.get(`${API_URL}/detailcommend/${movno}`);
+        console.log(data);
+        return data;
+    }   
+    useEffect(() => {
+        dispatch(getCommends(commendData));
+    }, [dispatch,movno])
+    
+    if(loading) return <div>로딩중...</div>
+    if(!data) return <div>데이터가 없습니다.</div>
+    if(error) return <div>에러가 발생했습니다.</div>
     return (
         <div className='commendbox'>
             <div className='titlezone'>
                 <h3>영화 한줄평 <BiCommentDetail className='icon2'/></h3>
-                <nav>
+                {/* <nav>
                     <BiLike className='icon' /> : <span>0</span>
                     <BiDislike className='icon' /> : <span>0</span>
-                </nav>
+                </nav> */}
             </div>
             <div className='commendzone'>
                 <table className='commendtable'>
@@ -59,14 +46,13 @@ const DetailCommend = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* 진짜 모르겠다 뭘 어떻게 하면 이 친구가 나올까 하 .... */}
-                        {commList ? <tr style={{height: '200px'}}>
+                        {data.length > 0  ? data.map(da => <tr key={da.c_no}>
+                            <td>{da.c_name}</td>
+                            <td>{da.c_desc}</td>
+                        </tr>)
+                        : <tr style={{height: '200px'}}>
                             <td colSpan={2}>작성된 한줄평이 없습니다..</td>
-                        </tr>
-                        : commList.map(li => <tr key={li.id}>
-                            <td>{li.user}</td>
-                            <td>{li.text}</td>
-                        </tr>)}
+                        </tr>}
                     </tbody>
                 </table>
                 <Pagination defaultCurrent={1} total={50} />
@@ -74,18 +60,8 @@ const DetailCommend = () => {
             <div className='writezone'>
                 <h3>한줄평 쓰기 <BiCommentEdit className='icon2'/></h3>
                 <div className='writebox'>
-                    <div className='write'>
-                        <textarea maxLength={50} onChange={onChange} value={inputText} 
-                        placeholder='이 영화의 한줄평을 자유롭게 적어주세요.'></textarea>
-                        <button onClick={onClick}>등록하기</button>
-                    </div>
-                    <p>
-                        <nav>
-                            <span className='countsp'>{textCount}</span>
-                            <span>/</span>
-                            <span>50</span>
-                        </nav>
-                    </p>
+                    {/* textarea있는 컴포넌트 자리 ! */}
+                    <WriteCommend movno={movno} onSign={onSign}/>
                 </div>
             </div>
         </div>

@@ -93,7 +93,7 @@ const MovieDetail = ({data}) => {
                     </div>
                 </div>
             </div>
-            <DetailCommend/>
+            <DetailCommend movno={data.mov_no}/>
         </div>
     );
 };
