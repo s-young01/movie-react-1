@@ -21,6 +21,7 @@ import SearchContainer from './container/SearchContainer';
 import WriteMovie from './pages/WriteMovie';
 import Review from './pages/Review';
 import EditDetailView from './pages/EditDetailView';
+import NoticeDetailView from './pages/NoticeDetailView';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path='/editpass' element={<Editpass/>}/>
         <Route path='/detailfree/:no' element={<DetailView/>}/>
         <Route path='/notice' element={<Notice/>}/>
+        <Route path='/noticefree/:no' element={<NoticeDetailView/>}/>
         <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
         <Route path='movieupdate' element={<WriteMovie/>}/>
         <Route path="/test" element={<Review />} />

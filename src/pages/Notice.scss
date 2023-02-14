@@ -1,74 +1,89 @@
 .everyboard {
-    width: 55%;
-    height: 33vh;
-    display: table;
-    background-color: #fff;
-    vertical-align: top;
-    border-radius: 15px;
-    text-align: center;
-    margin-top: 250px;
-    margin-left: 300px;
-}
-    h2 {
-        display: flex;
-        margin: 0 auto;
-        padding: 30px 0 20px 30px;
-        font-size: 28px;
-        // font-size: 20px;
-        // text-align: center;
-        // padding-bottom: 20px;
-        // padding-left: 20px;
-    }
-    hr {
-        border: solid 1px #ccc;
-        margin-bottom: 10px;
-    }
+    padding-top: 80px;
+    cursor: default;
+    .boardbox {
+        width: 100%;
+        height: auto;
+        margin: 100px 0;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        h2 {
+            padding-bottom: 30px;
+            font-size: 28px;
+        }
         .freetable {
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
+            height: 300px;
             text-align: center;
-            border-color: #ccc;
+            margin-top: 10px; 
             border-collapse: collapse;
-        }
-            .category {
-                height: 15px;
+            thead {
+                tr {
+                    font-size: 18px;
+                    line-height: 30px;
+                    th {
+                        border-bottom: 1px solid #FF4C29;
+                    }
+                }  
             }
-                th:nth-child(1){
-                    width: 10%;
+            tbody {
+                tr {
+                    td {
+                        border-bottom: 1px solid #eee;
+                        span {
+                            &:hover {
+                                font-weight: bold;
+                            }
+                        }
+                    } 
                 }
-                th:nth-child(2) {
-                    width: 50%;
-                }
-                th:nth-child(3) {
-                    width: 20%;
-                }
-                th:nth-child(4) {
-                    width: 20%;
-                }      
-        td{
-            border-bottom: 1px solid #ccc;
-            padding: 0;
-            font-size: 14px;
-            padding: 11px 5px;
+            }
         }
-        .one{
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 10%;
+        .nav {
+            width: 90%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            .pagination {
+                width: 80%;
+                margin-left: 20%;
+            }
+            div {
+                width: 20%;
+                .writebtn {
+                    margin-left: 120px;
+                    padding: 10px 18px;
+                    border: 0;
+                    outline: 0;
+                    border-radius: 2px;
+                    font-family: 'GoyangIlsan', sans-serif;
+                    color: #fff;
+                    background-color: #082032;
+                    transition: 0.2s;
+                    &:hover {
+                        background-color: #FF4C29;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
-        .two {
-            text-align: center;
-            padding-left: 60px;
-        }  
-            .cbtn {
-                display: flex;
-                padding: 7px;
-                border-radius: 18px;
-                // background-color: #FF4C29;
-                background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
-                border: 1px solid #ccc;
-                color: #fff;
-                margin: 8px;
-                margin-left: 950px;
+    }
+}
 
-            }
+.ant-pagination {
+    text-align: center;
+    padding-top: 10px;
+    .ant-pagination-item {
+        border-radius: 50%;
+    }
+    .ant-pagination-item-active {
+        border-color: #FF4C29;
+        a {
+            color: #FF4C29;
+        }
+    }
+}
