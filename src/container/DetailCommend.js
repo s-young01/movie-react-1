@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './DetailCommend.scss';
 import { Pagination } from 'antd';
-import { BiLike, BiDislike,BiCommentDetail, BiCommentEdit } from "react-icons/bi";
+import { BiLike, BiCommentDetail, BiCommentEdit } from "react-icons/bi";
 import WriteCommend from '../pages/WriteCommend';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCommends } from '../moduls/moviePost';
@@ -32,10 +32,10 @@ const DetailCommend = ({movno}) => {
         <div className='commendbox'>
             <div className='titlezone'>
                 <h3>영화 한줄평 <BiCommentDetail className='icon2'/></h3>
-                {/* <nav>
+                <nav>
+                    <span className='infosp'>( 이 영화를 추천 하려면 아이콘을 누르세요 )</span>
                     <BiLike className='icon' /> : <span>0</span>
-                    <BiDislike className='icon' /> : <span>0</span>
-                </nav> */}
+                </nav>
             </div>
             <div className='commendzone'>
                 <table className='commendtable'>
