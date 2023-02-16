@@ -15,9 +15,9 @@ const mm = {
 }
 
 const Community = () => {
-  const [posts, setPosts] = useState([]); //초기 받아오는 데이터 설정 초기값은 []
+  /* const [posts, setPosts] = useState([]); //초기 받아오는 데이터 설정 초기값은 []
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(5); //한페이지당 렌더링 되는 데이터 수
+  const [postsPerPage, setPostPerPage] = useState(5); //한페이지당 렌더링 되는 데이터 수 */
 
   const isLogin = useSelector(state => state.loginCheck.isLogin);
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const Community = () => {
   
   //console.log(data)
    //페이지숫자 리스트 구현 계산
-   const indexOfLast = currentPage * postsPerPage    //페이지 마지막수 1 * 10
+   /* const indexOfLast = currentPage * postsPerPage    //페이지 마지막수 1 * 10
    const indexOfFirst = indexOfLast - postsPerPage;   // 페이지 첫번째 수10 - 10 = 0
    let currentPosts2;
    const currentPosts =  (posts) => {
@@ -46,7 +46,7 @@ const Community = () => {
      return currentPosts2;
    }
    const postLists = currentPosts(posts)
-   console.log(postLists)
+   console.log(postLists) */
 
    const {loading, data, error} = useSelector(state => state.moviePost.moviePosts);
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const Community = () => {
 
    useEffect(() => {
     dispatch(getDatas(textData))
-    setPosts(data)
+    /* setPosts(data) */
   }, [dispatch])
   if(loading) return <div style={{...mm}}>로딩중입니다..</div>
   if(error) return <div style={{...mm}}>에러가 발생했습니다.</div>
@@ -76,7 +76,7 @@ const Community = () => {
                 </tr>
             </thead>
             <tbody>
-              {postLists.map(text=>
+              {data.map(text=>
               <tr key={text.bor_no}>
                 <td>
                   <Link to={`/detailfree/${text.bor_no}`}><span>{text.bor_title}</span></Link>
@@ -88,11 +88,11 @@ const Community = () => {
             </tbody>
         </table>
         <div className='nav'>
-            <Pagination
+            {/* <Pagination
             postsPerPage={postsPerPage}
             totalPosts={posts.length}
             paginate={setCurrentPage}
-            />
+            /> */}
             <div>
               <button onClick={onClick} className='writebtn'>글쓰기</button>
             </div>
