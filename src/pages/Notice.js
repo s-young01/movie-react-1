@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/apiurl';
 import { getDatas } from '../moduls/moviePost';
 import { getCookie } from '../util/cookie';
-import './Notice.scss';
+import './Community.scss';
 
 
 const mm = {

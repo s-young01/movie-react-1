@@ -81,7 +81,7 @@ const Community = () => {
             </tbody>
         </table>
         <div className='nav'>
-            <Pagination
+            <Pagination className="pagination"
             postsPerPage={postsPerPage}
             totalPosts={data.length}
             paginate={setCurrentPage}

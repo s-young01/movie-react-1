@@ -1,14 +1,7 @@
 import React from 'react';
+import "./Pagination.scss"
 
-const pageNums = {
-  display: "flex",
-  listStyle: "none",
-  width: "50%",
-  fontSize: "20px",
-  justifyContent: "space-between",
-  margin: "0 auto"
 
-}
 
 
 const Pagination = ({postsPerPage, totalPosts, paginate}) => {
@@ -18,12 +11,12 @@ const Pagination = ({postsPerPage, totalPosts, paginate}) => {
   }
   
   return (
-    <div>
-      <div>
-        <ul style={{...pageNums}}>
+    <div className='pages'>
+      <div className='page '>
+        <ul className='numberLists'>
           {pageNumbers.map((number) =>
-          <li key={number}>
-            <span onClick={()=>{
+          <li key={number} className="numberList">
+            <span className='number' onClick={()=>{
               paginate(number)
               console.log(number)
               }}>{number}</span>
