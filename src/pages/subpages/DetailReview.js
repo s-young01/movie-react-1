@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../config/apiurl';
 
+
 const DetailReview = ({movno}) => {
     const [reviews, setReviews] = useState([]);
     useEffect(()=>{
@@ -18,8 +19,9 @@ const DetailReview = ({movno}) => {
         <>
         {reviews.map(re=>{
             return (
-                <div className='reviewlist detail' style={{backgroundColor:"#fff", width:"75%"}}>
-        <div className='reviewbox'>
+                <div className='reviewlist detail' style={{backgroundColor:"#fff", width:"75%", height:"100%"}}>
+        <span className='detailreview title' style={{fontSize:"20px", fontWeight:"bold"}}>베스트 리뷰</span>
+        <div className='reviewbox detail'>
                 <div className='imgbox'>
                     <img src={`${API_URL}/${re.r_img}`} alt=''/>
                 </div>

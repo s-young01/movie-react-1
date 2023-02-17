@@ -12,16 +12,15 @@ const Review = () => {
     useEffect(()=>{
         axios.get(`${API_URL}/review`)
         .then(res =>{
-            console.log(res);
             setListData(res.data);
         })
         .catch(e=>console.log(e));
     },[]);
-    
+    console.log(listData)
     return (
         <div className="review_page inner">
             <h2>영화 리뷰</h2>
-            {listData.map(list=><ReviewList list={list}/>)}
+            {listData.map(list=><ReviewList  list={list}/>)}
             <Pagination className='pagination'/>    
         </div>
     );
