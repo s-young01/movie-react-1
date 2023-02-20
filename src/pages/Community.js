@@ -85,6 +85,8 @@ const Community = () => {
             postsPerPage={postsPerPage}
             totalPosts={data.length}
             paginate={setCurrentPage}
+            isDone={false}
+            currentPage={currentPage}
             />
             <div>
               <button onClick={onClick} className='writebtn'>글쓰기</button>

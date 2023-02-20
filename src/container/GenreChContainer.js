@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import Loading from '../components/Loading';
 import { API_URL } from '../config/apiurl';
 import { getDatas } from '../moduls/moviePost';
 import movieSelect, { setreset, setSelect } from '../moduls/selectMovie';
@@ -36,7 +37,7 @@ const GenreChContainer = () => {
        console.log(genrelist)
     }, [dispatch, genrechange]);
     //console.log(data)
-    if(loading) return <div style={{...mm}}>로딩중입니다..</div>
+    if(loading) return <Loading>로딩중입니다..</Loading>
     if(error) return <div style={{...mm}}>에러가 발생했습니다.</div>
     if(!data) return <div style={{...mm}}>데이터가 없습니다.</div>
     return (

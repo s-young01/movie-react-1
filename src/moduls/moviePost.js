@@ -52,12 +52,14 @@ const initialState = {
 export const getDatas = callback => async dispatch => {
     dispatch({type: GET_DATAS})
     try{
-        const response = await callback();
+        const response = await callback() ;
         console.log(response)
         const data = response.data
+        setTimeout(()=>{
         dispatch({
             type: GET_DATAS_SUCCESS, data : data
         })
+    }, 3000)
     }
     catch(e){
         dispatch({type: GET_DATAS_ERROR, error: e})        
