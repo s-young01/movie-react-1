@@ -13,7 +13,6 @@ const DetailReview = ({movno}) => {
         })
         .catch(e=>console.log(e))
     },[])
-    const lists = [<div>하하</div>,<div>하하</div>,<div>하하</div>]
     if(!reviews) return <div>데이터가 없습니다.</div>
     return (
         <>

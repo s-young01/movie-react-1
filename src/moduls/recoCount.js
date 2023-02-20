@@ -1,34 +1,56 @@
-// 액션 타입
-const LIKE = 'LIKE';
-const DISLIKE = 'DISLIKE';
+const GET_COUNT = 'GET_COUNT';
+const GET_COUNT_SUCCESS = 'GET_COUNT_SUCCESS';
+const GET_COUNT_ERROR = 'GET_COUNT_ERROR';
 
-// 액션 생성 함수
-export const like = () => ({
-    type: LIKE
-})
-export const dislike = () => ({
-    type: DISLIKE
-})
-
-// 초기값 
-const initialState =  {
-   getlike: 0,
-   getdislike: 0
+const initialState = {
+    count: {
+        loading: false,
+        data: null,
+        error: null
+    }
 }
 
-// 리듀서 함수 작성
+export const getCount = callback => async dispatch => {
+    dispatch({type: GET_COUNT})
+    try {
+        const response = await callback();
+        let data = response.data;
+        if(data.length>0){
+            data = data[0]
+        }else {
+            data = {reco_count: 0}
+        }
+        dispatch({
+            type: GET_COUNT_SUCCESS,
+            data: data
+        })
+
+    }
+    catch(e) {
+        dispatch({type: GET_COUNT_ERROR})
+    }
+} 
+
 export default function recoCount(state=initialState, action) {
     switch(action.type) {
-        case LIKE:
+        case GET_COUNT:
             return {
-                ...state,
-                getlike: state.getlike + 1,
+                loading: true,
+                data: null,
+                error: null
             };
-        case DISLIKE:
+        case GET_COUNT_SUCCESS:
             return {
-                ...state,
-                getdislike: state.getdislike + 1,
-            };
+                loading: false,
+                data: action.data,
+                error: null
+            }
+        case GET_COUNT_ERROR:
+            return {
+                loading: false,
+                data: null,
+                error: action.error
+            }
         default:
             return state;
     }
