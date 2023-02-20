@@ -10,9 +10,9 @@ import textList from "./writeFree";
 const rootReducer = combineReducers({
     moviePost,
     loginCheck,
-    recoCount,
     movieSelect,
-    textList
+    textList,
+    recoCount
 });
 
 export default rootReducer;

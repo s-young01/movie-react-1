@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import './DetailCommend.scss';
 import { Pagination } from 'antd';
-import { BiLike, BiCommentDetail, BiCommentEdit, BiPencil, BiTrash } from "react-icons/bi";
+import { BiCommentEdit, BiPencil, BiTrash } from "react-icons/bi";
 import WriteCommend from '../pages/WriteCommend';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCommends } from '../moduls/moviePost';
 import axios from 'axios';
 import { API_URL } from '../config/apiurl';
 import { getCookie } from '../util/cookie';
+import RecoCount from '../pages/RecoCount';
+import CounterContainer from './CounterContainer';
 
 const DetailCommend = ({movno}) => {
     const isLogin = useSelector(state => state.loginCheck.isLogin);
@@ -41,13 +43,8 @@ const DetailCommend = ({movno}) => {
     // });
     return (
         <div className='commendbox'>
-            <div className='titlezone'>
-                <h3>영화 한줄평 <BiCommentDetail className='icon2'/></h3>
-                <nav>
-                    <span className='infosp'>( 이 영화를 추천 하려면 아이콘을 누르세요 )</span>
-                    <BiLike className='icon' /> : <span>0</span>
-                </nav>
-            </div>
+            {/* 카운터 */}
+            <CounterContainer movno={movno}/>
             <div className='commendzone'>
                 <table className='commendtable'>
                     <thead>
