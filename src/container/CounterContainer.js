@@ -12,6 +12,9 @@ const CounterContainer = ({movno}) => {
         const data = await axios.get(`${API_URL}/recocount/${movno}`);
         return data;
     }
+    const reDispatch = () =>{
+        dispatch(getCount(countData));
+    }
     useEffect(() => {
         dispatch(getCount(countData));
     },[dispatch, movno]);
@@ -19,7 +22,7 @@ const CounterContainer = ({movno}) => {
     if(!data) return <div>데이터가 없습니다.</div>
     if(error) return <div>에러가 발생했습니다.</div>
     return (
-        <RecoCount movno={movno} data={data}/>
+        <RecoCount movno={movno} data={data} reDispatch={reDispatch}/>
     );
 };
 

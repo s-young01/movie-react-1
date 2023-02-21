@@ -8,7 +8,6 @@ import { getCommends } from '../moduls/moviePost';
 import axios from 'axios';
 import { API_URL } from '../config/apiurl';
 import { getCookie } from '../util/cookie';
-import RecoCount from '../pages/RecoCount';
 import CounterContainer from './CounterContainer';
 
 const DetailCommend = ({movno}) => {
@@ -21,7 +20,6 @@ const DetailCommend = ({movno}) => {
 
 
     const commendData = async () => {
-        console.log('aaa');
         const data = await axios.get(`${API_URL}/detailcommend/${movno}`);
         return data;
     }   
