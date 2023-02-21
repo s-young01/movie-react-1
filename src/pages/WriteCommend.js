@@ -14,7 +14,8 @@ const WriteCommend = ({movno,onSign}) => {
     const [formData, setFormData] = useState({
         c_name: getCookie('usernickname'),
         c_desc: '',
-        c_movno: movno
+        c_movno: movno,
+        c_isDone: "false"
     });
 
     const onChange = (e) => {
@@ -55,10 +56,8 @@ const WriteCommend = ({movno,onSign}) => {
         
     }
      let count = 0
-     console.log(`함수 밖${count}`)
      const ss = () => {
          count += 1
-         console.log(`함수 안${count}`)
      }
     return (
         <div className='write'>

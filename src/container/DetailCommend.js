@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './DetailCommend.scss';
 import { Pagination } from 'antd';
 import { BiCommentEdit, BiPencil, BiTrash } from "react-icons/bi";
@@ -8,9 +8,15 @@ import { getCommends } from '../moduls/moviePost';
 import axios from 'axios';
 import { API_URL } from '../config/apiurl';
 import { getCookie } from '../util/cookie';
+<<<<<<< Updated upstream
 import CounterContainer from './CounterContainer';
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> Stashed changes
 
 const DetailCommend = ({movno}) => {
+    
+    const navigate = useNavigate()
     const isLogin = useSelector(state => state.loginCheck.isLogin);
     const onSign = () => {
         dispatch(getCommends(commendData));
@@ -22,8 +28,41 @@ const DetailCommend = ({movno}) => {
     const commendData = async () => {
         const data = await axios.get(`${API_URL}/detailcommend/${movno}`);
         return data;
-    }   
-     console.log(data);
+    }
+    console.log(data)
+    
+    //console.log(data);
+    const onDeleteRec = (id) => {
+        console.log(`삭제${id}`)
+        axios.delete(`${API_URL}/deleteCommend/${id}`)
+        .then(res=>{
+            console.log(res)
+            if(res){
+                alert("삭제완료")
+                dispatch(getCommends(commendData))
+                navigate(`/detail/${movno}`)
+            }
+        })
+        .catch(e=>console.log(e))
+    }
+    const [imagineData , setImagineData] = useState({
+        newData: [{
+            c_no:"",
+            c_name:"",
+            c_desc: "",
+            c_movno: "",
+            c_isDone: ""
+        }]
+    })
+    const onToggleRec = (id) => {
+        console.log(`수정${id}`)
+        const newdata = data.map(da => da.no === id ? {...da, isDone: !da.isDone}: da)
+        setImagineData({
+            ...imagineData,
+            newData: newdata
+        })
+    }
+    console.log(imagineData)
 
     useEffect(() => {
         dispatch(getCommends(commendData));
@@ -54,12 +93,12 @@ const DetailCommend = ({movno}) => {
                     </thead>
                     <tbody>
                         {data.length > 0  ?  data.map(da => <tr key={da.c_no}>
-                            <td>{da.c_name}</td>
+                            <td>{da.c_name}</td> 
                             <td>{da.c_desc}</td>
                             {(getCookie("usernickname") === `${da.c_name}` && isLogin) ? 
                             <td colSpan={2} className='icontd'>
-                                <BiPencil className='re deicon'/>
-                                <BiTrash className='del deicon'/>
+                                <BiPencil className='re deicon' onClick={()=>{onToggleRec(da.c_no)}}/>
+                                <BiTrash className='del deicon' onClick={()=>{onDeleteRec(da.c_no)}}/>
                             </td>
                             : <></>
                             }
