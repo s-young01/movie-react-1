@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import "./Navi.scss";
 import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ const Navi = () => {
         setOpen(isOpen => !isOpen);
         console.log(isOpen);
     }
+    
     return (
         <nav>
             <button onClick={toggleMenu} className={isOpen ? 'close_btn navBtn' : 'open_btn navBtn'}>
