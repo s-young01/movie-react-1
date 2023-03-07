@@ -8,11 +8,8 @@ import { getCommends } from '../moduls/moviePost';
 import axios from 'axios';
 import { API_URL } from '../config/apiurl';
 import { getCookie } from '../util/cookie';
-<<<<<<< Updated upstream
 import CounterContainer from './CounterContainer';
-=======
 import { useNavigate } from 'react-router-dom';
->>>>>>> Stashed changes
 
 const DetailCommend = ({movno}) => {
     
