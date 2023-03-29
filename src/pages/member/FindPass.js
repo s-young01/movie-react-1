@@ -27,7 +27,7 @@ const FindPass = () => {
         e.preventDefault();
         axios.post(`${API_URL}/findPass`, formData)
         .then(res=>{
-            console.log(res)
+            console.log(res.data)
             setidInfo(res.data)
             dispatch(setId(res.data))
         })

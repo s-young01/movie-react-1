@@ -7,11 +7,12 @@ import './Editpass.scss'
 
 const Editpass = () => {
     const navigate = useNavigate();
-    const userId = useSelector(state=>state.loginCheck.updataId);
+    const {updateId} = useSelector(state=>state.loginCheck);
+    console.log(updateId)
     const [formData, setFormData] = useState({
         password:"",
         passwordch: "",
-        email: userId,
+        email: updateId,
     })
     const onChange = (e)=> {
         const {name, value} = e.target;
