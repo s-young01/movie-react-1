@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { API_URL } from '../config/apiurl';
 import { getDatas } from '../moduls/moviePost';
 import YetMoviePage from '../pages/subpages/YetMoviePage';
+import Loading from '../components/Loading';
 
 const YetMovieCon = () => {
     const {loading, data, error} = useSelector(state => state.moviePost.moviePosts);
@@ -15,7 +16,7 @@ const YetMovieCon = () => {
     useEffect(() => {
         dispatch(getDatas(getYetData))
     },[dispatch]);
-    if(loading) return<div>로딩중</div>
+    if(loading) return <Loading/>
     if(error) return<div>에러</div>
     if(!data) return<div>데이터가 없습니다.</div>
 

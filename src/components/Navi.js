@@ -2,13 +2,18 @@ import React, {  useState } from 'react';
 import "./Navi.scss";
 import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSelect } from '../moduls/selectMovie';
 
 const Navi = () => {
     // 메뉴 상태관리
     const [isOpen, setOpen] = useState(true);
+    const dispatch = useDispatch();
+    const onToggle = (id) => dispatch(setSelect(id))
     const toggleMenu = () => {
         setOpen(isOpen => !isOpen);
         console.log(isOpen);
+        onToggle(1)
     }
     
     return (
@@ -18,13 +23,13 @@ const Navi = () => {
             </button>
             <div className={isOpen ? 'show_menu move' : 'hide_menu move'}>
                 <ul className='navmenu'>
-                    <li><span><Link to='/'>HOME</Link></span></li>
+                    <li onClick={toggleMenu}><span ><Link to='/'>HOME</Link></span></li>
                     <li>
                         <span><Link to='/latest'>최신영화</Link></span>
                         <div className='innermenu'>
                             <ul>
-                                <li><Link to='/latest'>현재 상영작</Link></li>
-                                <li><Link to='/yet'>개봉 예정작</Link></li>
+                                <li onClick={toggleMenu}><Link to='/latest'>현재 상영작</Link></li>
+                                <li onClick={toggleMenu}><Link to='/yet'>개봉 예정작</Link></li>
                             </ul>
                         </div>
                     </li>
@@ -32,20 +37,20 @@ const Navi = () => {
                         <span><Link to='/recomend'>추천영화</Link></span>
                         <div className='innermenu'>
                             <ul>
-                                <li><Link to='/month'>이달의 추천 영화</Link></li>
-                                <li><Link to='/genrepage/전체'>장르별 추천 영화</Link></li>
+                                <li onClick={toggleMenu}><Link to='/month'>이달의 추천 영화</Link></li>
+                                <li value={1} onClick={toggleMenu}><Link to='/genrepage/전체'>장르별 추천 영화</Link></li>
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <li onClick={toggleMenu}>
                         <span><Link to='/test'>영화리뷰</Link></span>
                     </li>
                     <li>
                         <span>커뮤니티</span>
                         <div className='innermenu'>
                             <ul>
-                                <li><Link to='/notice'>공지사항</Link></li>
-                                <li><Link to='/free'>자유 게시판</Link></li>
+                                <li onClick={toggleMenu}><Link to='/notice'>공지사항</Link></li>
+                                <li onClick={toggleMenu}><Link to='/free'>자유 게시판</Link></li>
                             </ul>
                         </div>
                     </li>

@@ -116,13 +116,11 @@ export const getCommends = callback => async dispatch => {
         const response = await callback();
         const data = response.data;
         dispatch({
-            type: GET_COMMENDS_SUCCESS,
-            data: data
+            type: GET_COMMENDS_SUCCESS,data: data
         })
     }
     catch(e) {
-        dispatch({type: GET_COMMENDS_ERROR,
-        error:e})
+        dispatch({type: GET_COMMENDS_ERROR,error:e})
     }
 }
 

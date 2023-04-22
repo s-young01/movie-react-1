@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../config/apiurl';
-import { getDatas } from '../moduls/moviePost';
+import { getCommends, getDatas } from '../moduls/moviePost';
 import { useDispatch ,useSelector } from 'react-redux';
 import { Link, useNavigate} from 'react-router-dom';
 import './Community.scss';
@@ -35,7 +35,7 @@ const Community = () => {
    const indexOfFirst = indexOfLast - postsPerPage;   // 페이지 첫번째 수10 - 10 = 0
 
 
-  const {loading, data, error} = useSelector(state => state.moviePost.moviePosts);
+  const {loading, data, error} = useSelector(state => state.moviePost.commends);
   const dispatch = useDispatch();
 
   const textData = async () => {
@@ -49,7 +49,7 @@ const Community = () => {
   }
 
   useEffect(() => {
-    dispatch(getDatas(textData))
+    dispatch(getCommends(textData))
   }, [dispatch])
   
   if(loading) return <div style={{...mm}}>로딩중입니다..</div>

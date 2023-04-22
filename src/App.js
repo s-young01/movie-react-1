@@ -52,7 +52,7 @@ function App() {
         <Route path='/editnotice/:no/:title/:name/:desc/:date' element={<EditNotice/>}/>
         <Route path='/noticefree/:no' element={<NoticeDetailView/>}/>
         <Route path='/searchpage/:name/:value' element={<SearchContainer/>}/>
-        <Route path='movieupdate' element={<WriteMovie/>}/>
+        <Route path='/movieupdate' element={<WriteMovie/>}/>
         <Route path="/test" element={<Review />} />
         <Route path="/editText/:no/:title/:name/:desc/:date" element={<EditDetailView />} />
       </Routes>

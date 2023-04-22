@@ -18,7 +18,8 @@ const mm = {
 const GenreChContainer = () => {
     const genrelist = useSelector(list=>list.movieSelect)
     const navigate = useNavigate()
-    const onToggle = id => dispatch(setSelect(id))
+    const onToggle = id => {dispatch(setSelect(id)) 
+        console.log(id)}
     const {genrechange} = useParams();
     //console.log(genrechange)
     const {loading, data, error} = useSelector(state => state.moviePost.moviePosts);
@@ -37,7 +38,7 @@ const GenreChContainer = () => {
        console.log(genrelist)
     }, [dispatch, genrechange]);
     //console.log(data)
-    if(loading) return <Loading>로딩중입니다..</Loading>
+    if(loading) return <Loading/>
     if(error) return <div style={{...mm}}>에러가 발생했습니다.</div>
     if(!data) return <div style={{...mm}}>데이터가 없습니다.</div>
     return (

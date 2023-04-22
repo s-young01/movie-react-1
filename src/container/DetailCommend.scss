@@ -68,6 +68,25 @@
                             }
                         }
                     }
+                    .icbtn {
+                        button{
+                            width: 50px;
+                            margin-left: 5px;
+                            height: 25px;
+                            border: 0;
+                            outline: 0; 
+                            color: #fff;
+                            background-color: #082032;
+                            font-family: 'GoyangIlsan', sans-serif;
+                            border-radius: 5px;
+                            transition: 0.2s;
+                            &:hover {
+                                background-color: #FF4C29;
+                                cursor: pointer;
+                            }
+                           
+                        }
+                    }
                 }
             }
         }

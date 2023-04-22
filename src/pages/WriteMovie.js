@@ -68,7 +68,7 @@ const WriteMovie = () => {
         .catch(e => console.log(e))
     }
     useEffect(() => {
-        if(!isLogin || username !== 'tpdud01') {
+        if(!isLogin || username !== 'admin') {
             alert('관리자만 접근할 수 있습니다.');
             navigate('/');
         }

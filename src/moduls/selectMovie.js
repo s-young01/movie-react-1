@@ -12,7 +12,7 @@ export const setSelect = (id) => ({
 //초기값
 const isGenre = 
    [
-        {id: 1, genrelist:"전체", genrechange: "전체", isDone: true},
+        {id: 1, genrelist:"전체", genrechange: "전체", isDone: false},
         {id: 2, genrelist:"액션",genrechange: "액션", isDone: false},
         {id: 3, genrelist:"호러/공포", genrechange: "공포", isDone: false},
         {id: 4, genrelist:"애니메이션", genrechange: "애니메이션", isDone: false},

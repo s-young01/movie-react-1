@@ -83,7 +83,7 @@ const Header = () => {
                     <li><Link to='/'>HOME</Link></li>
                     <span>|</span>
                     {isLogin ? <><li onClick={logoutClick}>로그아웃</li>
-                    {username === 'tpdud01' ? 
+                    {username === 'admin' ? 
                     <><span>|</span>
                     <li><Link to='/movieupdate'>영화등록</Link></li></> : null}</> :
                     <><li><Link to='/login'>로그인</Link></li>

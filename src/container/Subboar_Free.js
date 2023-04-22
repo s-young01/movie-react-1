@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { API_URL } from '../config/apiurl';
-import { getDatas } from '../moduls/moviePost';
+import { getCommends, getDatas } from '../moduls/moviePost';
 
 const mm = {
     margin: "300px",
@@ -12,7 +12,7 @@ const mm = {
 }
 
 const Subboar_Free = () => {
-    const {loading, data, error } = useSelector(state=> state.moviePost.moviePosts);
+    const {loading, data, error } = useSelector(state=> state.moviePost.commends);
     const dispatch = useDispatch();
     const subFree = async () => {
         const data = await axios.get(`${API_URL}/subFrees`)
@@ -20,7 +20,7 @@ const Subboar_Free = () => {
     }
      
     useEffect(() => {
-        dispatch(getDatas(subFree))
+        dispatch(getCommends(subFree))
       }, [dispatch])
     if(loading) return <div style={{...mm}}>로딩중...</div>
     if(!data) return <div style={{...mm}}>데이터가 없습니다.</div>

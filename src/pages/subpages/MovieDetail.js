@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import { API_URL } from '../../config/apiurl';
 import './MovieDetail.scss';
@@ -7,6 +7,7 @@ import DetailCommend from '../../container/DetailCommend';
 import DetailReview from './DetailReview';
 
 const MovieDetail = ({data}) => {
+    
     return (
         <div className='moviedetail inner'>
             <div className='detailbox'>

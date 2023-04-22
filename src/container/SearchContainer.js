@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDatas } from '../moduls/moviePost';
 import SearchPage from '../pages/SearchPage';
+import Loading from '../components/Loading';
 
 const mm = {
     margin: "300px",
@@ -29,7 +30,7 @@ const SearchContainer = () => {
         dispatch(getDatas(searchData))
     },[dispatch, name, value])
     console.log(data)
-    if(loading) return <div style={{...mm}}>로딩중입니다..</div>
+    if(loading) return <Loading/>
     if(error) return <div style={{...mm}}>에러가 발생했습니다.</div>
     if(!data) return <div style={{...mm}}>데이터가 없습니다.</div>
     return (
