@@ -62,6 +62,11 @@ const Notice = () => {
         <div className='everyboard inner'>
           <div className='boardbox'>
             <h2>공지사항</h2>
+            <div className='nav'>
+              {getCookie("usernickname") === "admin" ? <div>
+                <button onClick={onClick} className='writebtn'>글쓰기</button>
+              </div> : null}
+            </div>
             <table className='freetable'>
               <thead>
                   <tr className='category'>
@@ -82,11 +87,6 @@ const Notice = () => {
                 )}
               </tbody>
             </table>
-            <div className='nav'>
-              {getCookie("usernickname") === "admin" ? <div>
-                <button onClick={onClick} className='writebtn'>글쓰기</button>
-              </div> : null}
-            </div>
             <Pagination className="pagination"
               postsPerPage={postsPerPage}
               totalPosts={data.length}
