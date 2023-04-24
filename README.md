@@ -49,7 +49,7 @@ Html, Css, Sass, JavaScript, React, Redux, MySQL, GitHub, Git
 - 관리자 id를 제외한 다른 사용자는 읽기만 가능
 - 페이징 기능
 
-#### 공지사항 페이지 <a href="https://github.com/namminimi/ice-cream/wiki/%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C7(%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD)" >상세보기 - WIKI 이동</a>
+#### 자유게시판 페이지 <a href="https://github.com/namminimi/ice-cream/wiki/%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C7(%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD)" >상세보기 - WIKI 이동</a>
 - 글 등록, 수정, 삭제 가능
 - 페이징 기능
 
