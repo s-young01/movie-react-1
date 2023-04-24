@@ -58,20 +58,21 @@ const WriteNotice = () => {
 
     return (
         <div className="Writing">
-            <form onSubmit={onSubmit}>
+            <div className='inner'>
                 <h2>게시글 작성</h2>
                 <div className='form-wrapper'>
-                    <input className="title-input" name="n_title" type='text' 
-                    placeholder='제목을 입력하세요' onChange={onChange} value={isText.n_title}/>
-                    <input className='title-nick' name='n_nickname' type='text' 
-                    placeholder='닉네임 입력' onChange={onChange} value={isText.n_nickname} />
-                    <input className='title-date' name='n_date' type='text' placeholder='날짜' value={isText.n_date} onChange={onChange} /> 
-                    <textarea className="text-area" name="n_desc" 
-                    placeholder='내용을 입력하세요' onChange={onChange} value={isText.n_desc}></textarea>
-                </div>
-                <button className="submit-button" type="submit">등록</button>
-                <button className="submit-button" type="reset" onClick={listbt}>취소</button>
-            </form>
+                    <form onSubmit={onSubmit}>
+                        <input className="title-input" name="t_title" type='text' placeholder='제목을 입력하세요.'
+                        onChange={onChange} value={isText.t_title}/>
+                        <textarea className="text-area" name="t_desc" placeholder='내용을 입력하세요.'
+                        onChange={onChange} value={isText.t_desc}></textarea>
+                        <nav className='form_btn'>
+                            <button className="submit_btn" type="submit">등록</button>
+                            <button className="submit_btn" type="reset" onClick={listbt}>취소</button>
+                        </nav>
+                    </form>
+                </div>  
+            </div>
       </div>
     )
     }
