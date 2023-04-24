@@ -49,7 +49,6 @@ const EditDetailView = () => {
         }else {
             alert("제목과 내용을 입력해주세요.");
         }
-        
     }
    
     return (

@@ -63,9 +63,9 @@ const WriteNotice = () => {
                 <div className='form-wrapper'>
                     <form onSubmit={onSubmit}>
                         <input className="title-input" name="t_title" type='text' placeholder='제목을 입력하세요.'
-                        onChange={onChange} value={isText.t_title}/>
+                        onChange={onChange} value={isText.n_title}/>
                         <textarea className="text-area" name="t_desc" placeholder='내용을 입력하세요.'
-                        onChange={onChange} value={isText.t_desc}></textarea>
+                        onChange={onChange} value={isText.n_desc}></textarea>
                         <nav className='form_btn'>
                             <button className="submit_btn" type="submit">등록</button>
                             <button className="submit_btn" type="reset" onClick={listbt}>취소</button>
