@@ -21,36 +21,36 @@ export default class PauseOnHover extends Component {
       <div className='inner latest'>
         <h2><Link to='/latest'>최신영화</Link></h2>
         <Slider {...settings} className='slider'>
-          <Link to='/detail/1'>
-            <div className="slide">
+          <div className="slide">
+            <Link to='/detail/1' className="width">
               <img src="images/poster1_1.jpg" alt=""/>
-            </div>
-          </Link>
-          <Link to='/detail/2'>
-            <div className="slide">
+            </Link>
+          </div>
+          <div className="slide">
+            <Link to='/detail/2'>
               <img src="images/poster1_2.jpg" alt=""/>
-            </div>
-          </Link>
-          <Link to='/detail/3'>
-            <div className="slide">
+            </Link>
+          </div>
+          <div className="slide">
+            <Link to='/detail/3'>
               <img src="images/poster1_3.jpg" alt=""/>
-            </div>
-          </Link>
-          <Link to='/detail/4'>
-            <div className="slide">
+            </Link>
+          </div>
+          <div className="slide">
+            <Link to='/detail/4'>
               <img src="images/poster1_4.jpg" alt=""/>
-            </div>
-          </Link>
-          <Link to='/detail/5'>
-            <div className="slide">
+            </Link>
+          </div>
+          <div className="slide">
+            <Link to='/detail/5'>
               <img src="images/poster1_5.jpg" alt=""/>
-            </div>
-          </Link>
-          <Link to='/detail/6'>
-            <div className="slide">
+            </Link>
+          </div>
+          <div className="slide">
+            <Link to='/detail/6'>
               <img src="images/poster1_6.jpg" alt=""/>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </Slider>
       </div>
     );

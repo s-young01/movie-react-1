@@ -1,27 +1,22 @@
 .pages {
     .page{
+        margin-top: 20px;
         .numberLists {
            display: flex;
-           justify-content: flex-start;
+           justify-content: center;
            list-style: none;
-           width:300px;
+           width: 100%;
             .numberList{
                 background-color: #fff;
                 color: #082032;
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                border: 1px solid #ccc;
-                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                margin: 0 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 transition: 0.2s;
                 cursor: pointer;
-                &:hover {
-                    color: #FF4C29;
-                    border-color: #FF4C29;
-                }
             }
         }
     }
