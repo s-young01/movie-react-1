@@ -74,86 +74,86 @@ const WriteMovie = () => {
         }
     }, [isLogin, username, navigate])
     return (
-        <div className='inner writemovie'>
+        <div className='inner2 writemovie'>
             <h2>영화등록</h2>
             <div className='writemoviebox'>
                 <form onSubmit={onSubmit}>
                     <table className='writemovietable'>
                         <tbody>
                             <tr>
-                                <td>제목</td>
+                                <th width="10%">제목</th>
                                 <td>
                                     <input type='text' name='mov_title'
                                     value={formData.mov_title} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>장르</td>
+                                <th>장르</th>
                                 <td>
                                     <input type='text' name='mov_genre'
                                     value={formData.mov_genre} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>연령제한</td>
+                                <th>연령제한</th>
                                 <td>
                                     <input type='text' name='mov_limit'
                                     value={formData.mov_limit} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>개봉일</td>
+                                <th>개봉일</th>
                                 <td>
                                     <input type='text' name='mov_date'
                                     value={formData.mov_date} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>상영시간</td>
+                                <th>상영시간</th>
                                 <td>
                                     <input type='text' name='mov_runnigtime'
                                     value={formData.mov_runnigtime} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>출연배우</td>
+                                <th>출연배우</th>
                                 <td>
                                     <input type='text' name='mov_actor'
                                     value={formData.mov_actor} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>감독</td>
+                                <th>감독</th>
                                 <td>
                                     <input type='text' name='mov_director'
                                     value={formData.mov_director} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>개봉나라</td>
+                                <th>개봉나라</th>
                                 <td>
                                     <input type='text' name='mov_country'
                                     value={formData.mov_country} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>평점</td>
+                                <th>평점</th>
                                 <td>
                                     <input type='text' name='mov_score'
                                     value={formData.mov_score} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>영화 줄거리</td>
+                                <th>줄거리</th>
                                 <td>
                                     <textarea type='text' name='mov_desc'
                                     value={formData.mov_desc} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>영화 포스터 이미지</td>
+                                <th>포스터</th>
                                 <td>
-                                    <input type='file' name='mov_img'
+                                    <input className='poster' type='file' name='mov_img'
                                     onChange={onChangeImg}/>
                                     {formData.mov_img && <div>
                                         <img src={`${API_URL}/upload/poster/${formData.mov_img}`}
@@ -162,14 +162,14 @@ const WriteMovie = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <td>영화 예고편 링크</td>
+                                <th>예고편 링크</th>
                                 <td>
                                     <input type='text' name='mov_movelink'
                                     value={formData.mov_movelink} onChange={onChange}/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>추천 여부</td>
+                                <th>추천 여부</th>
                                 <td>
                                 <select name='mov_reco' value={formData.mov_reco} onChange={onChange}>
                                     <option></option>
@@ -177,14 +177,12 @@ const WriteMovie = () => {
                                 </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colSpan={2}>
-                                    <button>등록하기</button>
-                                    <button>취소</button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
+                    <nav className='movie_submit'>
+                        <button>등록하기</button>
+                        <button>취소</button>
+                    </nav>
                 </form>
             </div>
         </div>
