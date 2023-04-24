@@ -2,10 +2,6 @@ import React from 'react';
 import { Link} from 'react-router-dom';
 import { API_URL } from '../config/apiurl';
 import "./NewMoviePage.scss";
-import "./GenrePage.scss"
-
-
-
 
 // div map 돌려서 뿌려줄 컴포넌트 만들기
 function NewMovieList({list}) {
@@ -46,11 +42,20 @@ function NewMovieList({list}) {
 }
 
 const SearchPage = ({data}) => {
+    console.log(data);
     return (
-        <div className="NewMovie_page">
-            <h2>검색한 결과</h2>
-            <div className="NewMovie_box">
-                {data.map(da => <NewMovieList key={da.mov_no} list={da}/>)}
+        <div className='inner'>
+            <div className="NewMovie_page">
+                <h2>검색한 결과...({data.length})건</h2>
+                {data.length > 0 ?  
+                    <div className="NewMovie_box">
+                        {data.map(da => <NewMovieList key={da.mov_no} list={da}/>)}
+                    </div>
+                :
+                    <div className="NewMovie_box2">
+                        <p>검색 결과가 없습니다.</p>
+                    </div>
+                }
             </div>
         </div>
     );

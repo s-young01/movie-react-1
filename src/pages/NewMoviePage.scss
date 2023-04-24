@@ -1,5 +1,5 @@
-.NewMovie_page{
-    margin: 180px 0 120px 0;
+.NewMovie_page {
+    margin-top: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,6 +46,15 @@
                     }   
                 }
             }
+        }
+    }
+    .NewMovie_box2 {
+        height: 500px;
+        background-color: #fff;
+        border-radius: 10px;
+        p {
+            font-size: 24px;
+            margin: 24px;
         }
     }
 }

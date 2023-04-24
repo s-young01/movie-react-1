@@ -355,7 +355,7 @@ const onSubmit = (e) => {
                                 <td><span>아이디</span></td>
                                 <td>
                                     <input name='id' type='text' value={id} onChange={onChangeid}/>
-                                    <button className='id_btn' onClick={idCheck}>중복확인</button>
+                                    <button className='id_btn' type='button' onClick={idCheck}>중복확인</button>
                                     <span>{idMessage}</span>
                                 </td>
                             </tr>
@@ -377,7 +377,7 @@ const onSubmit = (e) => {
                                 <td><span>닉네임</span></td>
                                 <td>
                                     <input name='nicname' type='text' value={nicname} onChange={onChangenic}/>
-                                    <button className='id_btn' onClick={nicCheck}>중복확인</button>
+                                    <button className='id_btn' type='button' onClick={nicCheck}>중복확인</button>
                                     <span>{nicnameMessage}</span>
                                 </td>
                             </tr>
@@ -436,7 +436,7 @@ const onSubmit = (e) => {
                     </table>
                     <div className='join_btn'>
                         <button type="submit">가입하기</button>
-                        <button onClick={home}>취소</button>
+                        <button type='button' onClick={home}>취소</button>
                     </div>
                     </form>
                 </div>
