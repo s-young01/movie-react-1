@@ -60,12 +60,17 @@ const Community = () => {
     <div className='everyboard inner'>
       <div className='boardbox'>
         <h2>자유게시판</h2>
+        <div className='nav'>
+            <div>
+              <button onClick={onClick} className='writebtn'>글쓰기</button>
+            </div>
+        </div>
           <table className='freetable'>
             <thead>
                 <tr className='category'>
-                    <th width='45%'>제목</th>
+                    <th width='50%'>제목</th>
                     <th width='25%'>작성자</th>
-                    <th width='20%'>등록일</th>
+                    <th width='25%'>등록일</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,18 +85,14 @@ const Community = () => {
               )}
             </tbody>
         </table>
-        <div className='nav'>
-            <Pagination className="pagination"
-            postsPerPage={postsPerPage}
-            totalPosts={data.length}
-            paginate={setCurrentPage}
-            isDone={false}
-            currentPage={currentPage}
-            />
-            <div>
-              <button onClick={onClick} className='writebtn'>글쓰기</button>
-            </div>
-        </div>
+        
+        <Pagination className="pagination"
+          postsPerPage={postsPerPage}
+          totalPosts={data.length}
+          paginate={setCurrentPage}
+          isDone={false}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   )
