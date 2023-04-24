@@ -51,7 +51,7 @@ const EditNotice = () => {
     return (
         <div className="Writing">
             <form onSubmit={onSubmit}>
-                <h2>게시글 작성</h2>
+                <h2>게시글 수정</h2>
                 <div className='form-wrapper'>
                     <input className="title-input" name="n_title" type='text' 
                     placeholder='제목을 입력하세요' onChange={onChange} value={formData.n_title}/>

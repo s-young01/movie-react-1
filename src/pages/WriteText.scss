@@ -25,16 +25,31 @@
       }
       
       .title-input {
-        width: 400px;
+        width: 620px;
         height: 35px;
         margin: 10px;
+        padding-left: 10px;
       }
       
+      .title-nick {
+        width: 100px;
+        height: 35px;
+        margin: 10px;
+        text-align: center;
+      }
 
+      .title-date {
+        width: 100px;
+        height: 35px;
+        margin: 10px;
+        text-align: center;
+      }
   
       .text-area {
         width: 70%;
         min-height: 480px;
+        padding-left: 10px;
+        padding-top: 10px;
       }
       
       .submit-button {
