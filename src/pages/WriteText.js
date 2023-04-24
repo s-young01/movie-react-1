@@ -15,7 +15,6 @@ const WriteText = () => {
     let minutes = time.getMinutes();
     let seconds = time.getSeconds();
 
-
     const navigate = useNavigate()
     const [isText, setText] = useState({
         t_title:"",
@@ -33,13 +32,15 @@ const WriteText = () => {
     }
 
     const listbt = () => {
-        navigate("/free")
+        navigate("/free");
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if(isText.t_title !=="" && isText.t_desc !== "" ){
+        if(isText.t_title !=="" && isText.t_desc !== "" ) {
             WriteText();
+        }else {
+            alert('제목과 내용을 입력해주세요.');
         }
     }
     const WriteText = () => {
@@ -48,8 +49,7 @@ const WriteText = () => {
         .then(res=> {
             console.log(res.data)
             alert('등록되었습니다.');
-            navigate(`/free`)
-            
+            navigate(`/free`);
         })
         .catch(e=>{
             console.log(e); 
@@ -58,22 +58,23 @@ const WriteText = () => {
 
     return (
         <div className="Writing">
-            <form onSubmit={onSubmit}>
+            <div className='inner'>
                 <h2>게시글 작성</h2>
                 <div className='form-wrapper'>
-                    <input className="title-input" name="t_title" type='text' 
-                    placeholder='제목을 입력하세요' onChange={onChange} value={isText.t_title}/>
-                    <input className='title-nick' name='t_nickname' type='text' 
-                    placeholder='닉네임 입력' onChange={onChange} value={isText.t_nickname} />
-                    <input className='title-date' name='t_date' type='text' placeholder='날짜' value={isText.t_date} onChange={onChange} /> 
-                    <textarea className="text-area" name="t_desc" 
-                    placeholder='내용을 입력하세요' onChange={onChange} value={isText.t_desc}></textarea>
-                </div>
-                <button className="submit-button" type="submit">입력</button>
-                <button className="submit-button" type="reset" onClick={listbt}>취소</button>
-            </form>
+                    <form onSubmit={onSubmit}>
+                        <input className="title-input" name="t_title" type='text' placeholder='제목을 입력하세요.'
+                        onChange={onChange} value={isText.t_title}/>
+                        <textarea className="text-area" name="t_desc" placeholder='내용을 입력하세요.'
+                        onChange={onChange} value={isText.t_desc}></textarea>
+                        <nav className='form_btn'>
+                            <button className="submit_btn" type="submit">등록</button>
+                            <button className="submit_btn" type="reset" onClick={listbt}>취소</button>
+                        </nav>
+                    </form>
+                </div>  
+            </div>
       </div>
     )
-    }
+}
 
 export default WriteText;
